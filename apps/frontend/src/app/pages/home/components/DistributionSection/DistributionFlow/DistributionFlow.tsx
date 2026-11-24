@@ -1,4 +1,4 @@
-import type { Feature } from '../../../data';
+import type { IconLabel } from '../../../../../../data/types';
 import {
   FlowCard,
   FlowList,
@@ -8,7 +8,7 @@ import {
 
 export interface DistributionFlowProps {
   title: string;
-  steps: Feature[];
+  steps: IconLabel[];
 }
 
 /** Ordered flow from Hi Reach → partners → customers; the first step is highlighted. */

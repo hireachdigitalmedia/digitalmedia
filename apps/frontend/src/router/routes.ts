@@ -1,5 +1,6 @@
 export const ROUTES = {
   home: '/',
+  iptv: '/iptv-services',
   about: '/about',
   services: '/services',
   contact: '/contact',
@@ -27,7 +28,7 @@ export interface NavItem {
 /** Main navigation (header). */
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', to: ROUTES.home },
-  { label: 'IPTV Services', to: homeSection(SECTION_IDS.iptv) },
+  { label: 'IPTV Services', to: ROUTES.iptv },
   { label: 'OTT Platforms', to: homeSection(SECTION_IDS.ott) },
   { label: 'Entertainment', to: homeSection(SECTION_IDS.entertainment) },
   { label: 'Distribution Partners', to: homeSection(SECTION_IDS.distribution) },
@@ -48,7 +49,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: 'Quick Links',
     links: [
       { label: 'Home', to: ROUTES.home },
-      { label: 'IPTV Services', to: homeSection(SECTION_IDS.iptv) },
+      { label: 'IPTV Services', to: ROUTES.iptv },
       { label: 'OTT Platforms', to: homeSection(SECTION_IDS.ott) },
       { label: 'Entertainment', to: homeSection(SECTION_IDS.entertainment) },
       { label: 'About Us', to: ROUTES.about },
@@ -57,7 +58,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: 'Services',
     links: [
-      { label: 'IPTV', to: homeSection(SECTION_IDS.iptv) },
+      { label: 'IPTV', to: ROUTES.iptv },
       { label: 'OTT', to: homeSection(SECTION_IDS.ott) },
       {
         label: 'Digital Entertainment',

@@ -2,7 +2,7 @@ import GroupsOutlined from '@mui/icons-material/GroupsOutlined';
 import PlayCircleOutlined from '@mui/icons-material/PlayCircleOutlined';
 import RouterOutlined from '@mui/icons-material/RouterOutlined';
 import { ROUTES } from '../../../../router/routes';
-import type { Feature } from './iptv.data';
+import type { IconLabel } from '../../../../data/types';
 
 export const DISTRIBUTION_CONTENT = {
   eyebrow: 'B2B2C Distribution Ecosystem',
@@ -22,7 +22,7 @@ export const DISTRIBUTION_CONTENT = {
     { icon: PlayCircleOutlined, label: 'Hi Reach Digital Media' },
     { icon: RouterOutlined, label: 'Distribution Partners' },
     { icon: GroupsOutlined, label: 'End Customers' },
-  ] satisfies Feature[],
+  ] satisfies IconLabel[],
   benefits: [
     'Entertainment service distribution opportunities',
     'Expanded customer offerings',

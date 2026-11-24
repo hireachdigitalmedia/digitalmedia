@@ -1,5 +1,5 @@
 import heroImage from '../../../../assets/home-image/hero-living-room.webp';
-import { SECTION_IDS } from '../../../../router/routes';
+import { ROUTES, SECTION_IDS } from '../../../../router/routes';
 
 export const HERO_CONTENT = {
   badge: 'IPTV & OTT Digital Entertainment',
@@ -10,7 +10,7 @@ export const HERO_CONTENT = {
     label: 'Explore Entertainment',
     sectionId: SECTION_IDS.entertainment,
   },
-  secondaryCta: { label: 'Explore IPTV Services', sectionId: SECTION_IDS.iptv },
+  secondaryCta: { label: 'Explore IPTV Services', to: ROUTES.iptv },
   image: {
     src: heroImage,
     alt: 'A television glowing in a dark living room at night',

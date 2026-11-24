@@ -1,14 +1,13 @@
-import ArrowForward from '@mui/icons-material/ArrowForward';
-import CheckCircleOutlined from '@mui/icons-material/CheckCircleOutlined';
-import { Button } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
-import { Section, SectionHeading } from '../../../../../components';
+import {
+  ActionButton,
+  CheckList,
+  Section,
+  SectionHeading,
+} from '../../../../../components';
 import { SECTION_IDS } from '../../../../../router/routes';
 import { DISTRIBUTION_CONTENT } from '../../data';
 import { DistributionFlow } from './DistributionFlow';
 import {
-  Benefit,
-  BenefitList,
   BenefitsCard,
   Chip,
   ChipList,
@@ -38,27 +37,12 @@ export function DistributionSection() {
               <Chip key={type}>{type}</Chip>
             ))}
           </ChipList>
-          <Button
-            variant="contained"
-            size="large"
-            endIcon={<ArrowForward />}
-            component={RouterLink}
-            to={cta.to}
-          >
-            {cta.label}
-          </Button>
+          <ActionButton action={cta} arrow />
         </div>
         <RightColumn>
           <DistributionFlow title={flowTitle} steps={flow} />
           <BenefitsCard>
-            <BenefitList>
-              {benefits.map((benefit) => (
-                <Benefit key={benefit}>
-                  <CheckCircleOutlined aria-hidden />
-                  {benefit}
-                </Benefit>
-              ))}
-            </BenefitList>
+            <CheckList items={benefits} columns={2} />
           </BenefitsCard>
         </RightColumn>
       </DistributionGrid>

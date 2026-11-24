@@ -1,7 +1,4 @@
-export interface Step {
-  title: string;
-  description: string;
-}
+import type { Step } from '../../../../data/types';
 
 export const GETTING_STARTED_CONTENT = {
   eyebrow: 'Getting Started',

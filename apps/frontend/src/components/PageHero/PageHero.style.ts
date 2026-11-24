@@ -1,5 +1,7 @@
 import { alpha, styled } from '@mui/material/styles';
 
+export type HeroSize = 'xl' | 'lg';
+
 export const HeroRoot = styled('section')(({ theme }) => ({
   padding: theme.spacing(14, 0),
   background: `radial-gradient(ellipse 60% 70% at 90% 30%, ${alpha(theme.palette.primary.main, 0.1)} 0%, transparent 70%)`,
@@ -34,13 +36,19 @@ export const Badge = styled('span')(({ theme }) => ({
   },
 }));
 
-export const HeroTitle = styled('h1')(({ theme }) => ({
+export const HeroTitle = styled('h1', {
+  shouldForwardProp: (prop) => prop !== 'size',
+})<{ size: HeroSize }>(({ theme, size }) => ({
   ...theme.typography.displayLg,
-  fontSize: '4.5rem',
+  fontSize: size === 'xl' ? '4.5rem' : '3.5rem',
   lineHeight: 1.1,
   margin: 0,
-  [theme.breakpoints.down('lg')]: { fontSize: '3.5rem' },
-  [theme.breakpoints.down('sm')]: { fontSize: '2.75rem' },
+  [theme.breakpoints.down('lg')]: {
+    fontSize: size === 'xl' ? '3.5rem' : '3rem',
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: size === 'xl' ? '2.75rem' : '2.375rem',
+  },
   '& span': { display: 'block' },
 }));
 
@@ -49,7 +57,7 @@ export const HeroSubtitle = styled('p')(({ theme }) => ({
   fontSize: '1.25rem',
   lineHeight: 1.6,
   color: theme.palette.text.secondary,
-  maxWidth: 560,
+  maxWidth: 580,
   margin: theme.spacing(3.5, 0, 5),
   [theme.breakpoints.down('sm')]: { fontSize: '1.0625rem' },
 }));

@@ -1,13 +1,7 @@
 import HubOutlined from '@mui/icons-material/HubOutlined';
 import LiveTvOutlined from '@mui/icons-material/LiveTvOutlined';
 import SmartDisplayOutlined from '@mui/icons-material/SmartDisplayOutlined';
-import type { SvgIconComponent } from '@mui/icons-material';
-
-export interface Highlight {
-  icon: SvgIconComponent;
-  title: string;
-  description: string;
-}
+import type { Highlight } from '../../../../data/types';
 
 export const INTRO_CONTENT = {
   title: 'Your World of Entertainment Starts Here.',

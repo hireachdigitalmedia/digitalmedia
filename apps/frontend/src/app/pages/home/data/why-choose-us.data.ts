@@ -2,7 +2,7 @@ import DevicesOtherOutlined from '@mui/icons-material/DevicesOtherOutlined';
 import MovieOutlined from '@mui/icons-material/MovieOutlined';
 import SubscriptionsOutlined from '@mui/icons-material/SubscriptionsOutlined';
 import SupportAgentOutlined from '@mui/icons-material/SupportAgentOutlined';
-import type { Highlight } from './intro.data';
+import type { Highlight } from '../../../../data/types';
 
 export const WHY_CHOOSE_US_CONTENT = {
   eyebrow: 'Why Choose Us',

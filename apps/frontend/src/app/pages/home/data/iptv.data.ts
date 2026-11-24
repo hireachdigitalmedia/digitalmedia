@@ -4,14 +4,9 @@ import ListAltOutlined from '@mui/icons-material/ListAltOutlined';
 import TheatersOutlined from '@mui/icons-material/TheatersOutlined';
 import TuneOutlined from '@mui/icons-material/TuneOutlined';
 import TvOutlined from '@mui/icons-material/TvOutlined';
-import type { SvgIconComponent } from '@mui/icons-material';
+import type { IconLabel } from '../../../../data/types';
 import iptvImage from '../../../../assets/home-image/live-tv.webp';
 import { ROUTES } from '../../../../router/routes';
-
-export interface Feature {
-  icon: SvgIconComponent;
-  label: string;
-}
 
 export const IPTV_CONTENT = {
   eyebrow: 'IPTV Services',
@@ -25,8 +20,8 @@ export const IPTV_CONTENT = {
     { icon: DevicesOutlined, label: 'Compatible device viewing' },
     { icon: TuneOutlined, label: 'Flexible entertainment options' },
     { icon: CastConnectedOutlined, label: 'Digital television experiences' },
-  ] satisfies Feature[],
-  cta: { label: 'Explore IPTV Services', to: ROUTES.contact },
+  ] satisfies IconLabel[],
+  cta: { label: 'Explore IPTV Services', to: ROUTES.iptv },
   image: {
     src: iptvImage,
     alt: 'A smart TV showing streaming apps in a dim room',

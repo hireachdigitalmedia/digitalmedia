@@ -3,6 +3,7 @@ import {
   AboutPage,
   ContactPage,
   HomePage,
+  IPTVPage,
   NotFoundPage,
   ServicesPage,
 } from '../app/pages';
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { path: ROUTES.home, element: <HomePage /> },
+      { path: ROUTES.iptv, element: <IPTVPage /> },
       { path: ROUTES.about, element: <AboutPage /> },
       { path: ROUTES.services, element: <ServicesPage /> },
       { path: ROUTES.contact, element: <ContactPage /> },

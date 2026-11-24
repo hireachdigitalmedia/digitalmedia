@@ -36,22 +36,3 @@ export const BenefitsCard = styled(Card)(({ theme }) => ({
   padding: theme.spacing(4.5),
   [theme.breakpoints.down('sm')]: { padding: theme.spacing(3) },
 }));
-
-export const BenefitList = styled('ul')(({ theme }) => ({
-  listStyle: 'none',
-  margin: 0,
-  padding: 0,
-  display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  gap: theme.spacing(3, 4),
-  [theme.breakpoints.down('sm')]: { gridTemplateColumns: '1fr' },
-}));
-
-export const Benefit = styled('li')(({ theme }) => ({
-  ...theme.typography.bodyLg,
-  fontSize: '1.0625rem',
-  display: 'flex',
-  alignItems: 'flex-start',
-  gap: theme.spacing(1.5),
-  '& .MuiSvgIcon-root': { color: theme.palette.primary.main, flexShrink: 0 },
-}));

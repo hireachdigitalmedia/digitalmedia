@@ -1,7 +1,4 @@
-export interface Faq {
-  question: string;
-  answer: string;
-}
+import type { Faq } from '../../../../data/types';
 
 // Draft answers — review with the business before launch.
 export const FAQ_CONTENT = {
