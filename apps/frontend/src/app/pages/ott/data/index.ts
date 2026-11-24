@@ -8,3 +8,4 @@ export * from './intro.data';
 export * from './media-sections.data';
 export * from './regional.data';
 export * from './section-ids';
+export * from './band.data';

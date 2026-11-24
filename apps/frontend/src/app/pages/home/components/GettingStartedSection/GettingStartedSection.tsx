@@ -5,7 +5,7 @@ export function GettingStartedSection() {
   const { eyebrow, title, steps } = GETTING_STARTED_CONTENT;
 
   return (
-    <Section tone="raised">
+    <Section glow="left" tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <StepCards steps={steps} />
     </Section>

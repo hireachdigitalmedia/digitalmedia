@@ -6,7 +6,7 @@ export function OnboardingSection() {
   const { eyebrow, title, steps } = ONBOARDING_CONTENT;
 
   return (
-    <Section id={PARTNER_SECTION_IDS.onboarding} tone="raised">
+    <Section glow="left" id={PARTNER_SECTION_IDS.onboarding} tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <StepCards steps={steps} columns={steps.length} />
     </Section>

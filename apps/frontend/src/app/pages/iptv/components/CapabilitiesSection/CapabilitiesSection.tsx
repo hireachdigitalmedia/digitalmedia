@@ -9,7 +9,7 @@ export function CapabilitiesSection() {
   const { eyebrow, title, capabilities } = CAPABILITIES_CONTENT;
 
   return (
-    <Section>
+    <Section glow="right">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <IconCardGrid items={capabilities} />
     </Section>

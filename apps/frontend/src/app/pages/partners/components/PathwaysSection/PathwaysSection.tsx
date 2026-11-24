@@ -9,7 +9,7 @@ export function PathwaysSection() {
   const { eyebrow, title, pathways } = PATHWAYS_CONTENT;
 
   return (
-    <Section tone="raised">
+    <Section glow="right" tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <IconCardGrid items={pathways} />
     </Section>

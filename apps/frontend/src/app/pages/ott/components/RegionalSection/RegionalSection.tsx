@@ -6,7 +6,7 @@ export function RegionalSection() {
 
   return (
     <Section tone="raised">
-      <MediaSplit image={image}>
+      <MediaSplit image={image} reverse>
         <SectionHeading
           eyebrow={eyebrow}
           title={title}

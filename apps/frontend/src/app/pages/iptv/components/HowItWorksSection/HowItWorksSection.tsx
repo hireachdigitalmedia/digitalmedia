@@ -5,7 +5,7 @@ export function HowItWorksSection() {
   const { eyebrow, title, steps } = HOW_IT_WORKS_CONTENT;
 
   return (
-    <Section id={IPTV_SECTION_IDS.howItWorks}>
+    <Section glow="left" id={IPTV_SECTION_IDS.howItWorks}>
       <SectionHeading eyebrow={eyebrow} title={title} />
       <StepCards steps={steps} />
     </Section>

@@ -6,7 +6,7 @@ export function WhyChooseUsSection() {
   const { eyebrow, title, reasons } = WHY_CHOOSE_US_CONTENT;
 
   return (
-    <Section tone="raised">
+    <Section glow="left" tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <ReasonGrid data-stagger>
         {reasons.map((reason) => (

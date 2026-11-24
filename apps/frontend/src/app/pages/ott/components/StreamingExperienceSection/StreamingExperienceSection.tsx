@@ -6,7 +6,7 @@ export function StreamingExperienceSection() {
   const { eyebrow, title, features } = EXPERIENCE_CONTENT;
 
   return (
-    <Section tone="raised">
+    <Section glow="left" tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <FeatureGrid data-stagger>
         {features.map((feature) => (

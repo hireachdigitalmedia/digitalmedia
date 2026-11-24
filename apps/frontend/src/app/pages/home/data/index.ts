@@ -10,3 +10,4 @@ export * from './intro.data';
 export * from './iptv.data';
 export * from './ott.data';
 export * from './why-choose-us.data';
+export * from './rhythm.data';

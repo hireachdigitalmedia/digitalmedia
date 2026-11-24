@@ -4,6 +4,21 @@ import { enter, fadeScale } from '../../theme/effects';
 export type HeroSize = 'xl' | 'lg';
 
 export const HeroRoot = styled('section')(({ theme }) => ({
+  position: 'relative',
+  isolation: 'isolate',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    inset: 0,
+    zIndex: -1,
+    pointerEvents: 'none',
+    backgroundImage: `radial-gradient(${alpha(theme.palette.common.white, 0.07)} 1px, transparent 1px)`,
+    backgroundSize: '28px 28px',
+    maskImage:
+      'radial-gradient(ellipse 70% 80% at 70% 40%, #000 0%, transparent 75%)',
+    WebkitMaskImage:
+      'radial-gradient(ellipse 70% 80% at 70% 40%, #000 0%, transparent 75%)',
+  },
   padding: theme.spacing(14, 0),
   background: `radial-gradient(ellipse 60% 70% at 90% 30%, ${alpha(theme.palette.primary.main, 0.1)} 0%, transparent 70%)`,
   [theme.breakpoints.down('md')]: { padding: theme.spacing(8, 0) },

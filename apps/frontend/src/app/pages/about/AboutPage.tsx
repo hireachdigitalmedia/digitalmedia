@@ -1,4 +1,4 @@
-import { CtaBanner, PageHero } from '../../../components';
+import { CtaBanner, ImageBand, PageHero } from '../../../components';
 import { useDocumentTitle } from '../../../hooks';
 import { AboutPageRoot } from './AboutPage.style';
 import {
@@ -6,7 +6,7 @@ import {
   FocusSection,
   VisionMissionSection,
 } from './components';
-import { ABOUT_CTA, ABOUT_HERO } from './data';
+import { ABOUT_BAND, ABOUT_CTA, ABOUT_HERO } from './data';
 
 export function AboutPage() {
   useDocumentTitle('About Us');
@@ -16,6 +16,7 @@ export function AboutPage() {
       <PageHero {...ABOUT_HERO} />
       <VisionMissionSection />
       <FocusSection />
+      <ImageBand {...ABOUT_BAND} />
       <AboutEcosystemSection />
       <CtaBanner {...ABOUT_CTA} tone="base" />
     </AboutPageRoot>

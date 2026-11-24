@@ -5,7 +5,7 @@ export function DevicesSection() {
   const { eyebrow, title, note, devices } = DEVICES_CONTENT;
 
   return (
-    <Section>
+    <Section glow="right">
       <SectionHeading eyebrow={eyebrow} title={title} subtitle={note} />
       <DeviceGrid devices={devices} />
     </Section>

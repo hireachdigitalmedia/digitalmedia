@@ -9,7 +9,7 @@ export function FocusSection() {
   const { eyebrow, title, items } = FOCUS_CONTENT;
 
   return (
-    <Section>
+    <Section glow="left">
       <SectionHeading eyebrow={eyebrow} title={title} />
       <IconCardGrid items={items} columns={2} />
     </Section>

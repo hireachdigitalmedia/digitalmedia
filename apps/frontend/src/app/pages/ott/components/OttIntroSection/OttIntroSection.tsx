@@ -3,7 +3,7 @@ import { OTT_INTRO } from '../../data';
 
 export function OttIntroSection() {
   return (
-    <Section tone="raised">
+    <Section glow="right" tone="raised">
       <IntroCards {...OTT_INTRO} />
     </Section>
   );

@@ -6,7 +6,7 @@ export function IntroSection() {
   const { title, subtitle, highlights } = INTRO_CONTENT;
 
   return (
-    <Section tone="raised">
+    <Section glow="right" tone="raised">
       <SectionHeading title={title} subtitle={subtitle} />
       <CardGrid data-stagger>
         {highlights.map((item) => (

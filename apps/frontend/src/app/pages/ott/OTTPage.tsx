@@ -1,4 +1,4 @@
-import { CtaBanner, PageHero } from '../../../components';
+import { CtaBanner, ImageBand, PageHero } from '../../../components';
 import { useDocumentTitle } from '../../../hooks';
 import {
   EnquirySection,
@@ -11,6 +11,7 @@ import {
 } from './components';
 import {
   MOVIES_SERIES_CONTENT,
+  OTT_BAND,
   OTT_CTA_CONTENT,
   OTT_HERO,
   OTT_SECTION_IDS,
@@ -31,6 +32,7 @@ export function OTTPage() {
       />
       <RegionalSection />
       <MediaPairSection content={SPORTS_LIVE_CONTENT} />
+      <ImageBand {...OTT_BAND} />
       <StreamingExperienceSection />
       <OttDevicesSection />
       <EnquirySection />
