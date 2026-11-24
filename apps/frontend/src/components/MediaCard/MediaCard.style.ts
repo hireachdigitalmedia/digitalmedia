@@ -1,14 +1,14 @@
 import { Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { hoverLift } from '../../theme/effects';
 
 export type MediaCardSize = 'md' | 'lg';
 
 export const MediaCardRoot = styled(Card)(({ theme }) => ({
   height: '100%',
   overflow: 'hidden',
-  transition: theme.transitions.create('border-color'),
-  '&:hover': { borderColor: theme.palette.outline.main },
-  '&:hover img': { transform: 'scale(1.04)' },
+  ...hoverLift(theme),
+  '&:hover img': { transform: 'scale(1.05)' },
 }));
 
 export const ImageWrapper = styled('div')({

@@ -10,7 +10,7 @@ export function CategoriesSection() {
   return (
     <Section id={SECTION_IDS.entertainment}>
       <SectionHeading eyebrow={eyebrow} title={title} />
-      <CategoryGrid>
+      <CategoryGrid data-stagger>
         {categories.map((category) => (
           <CategoryTile key={category.title} {...category} />
         ))}

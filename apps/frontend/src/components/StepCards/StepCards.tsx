@@ -13,7 +13,7 @@ export interface StepCardsProps {
 /** Numbered step cards (orange number badge, title, description). */
 export function StepCards({ steps, columns = 4 }: StepCardsProps) {
   return (
-    <StepGrid columns={columns}>
+    <StepGrid data-stagger columns={columns}>
       {steps.map((step, index) => (
         <li key={step.title}>
           <StepCard>

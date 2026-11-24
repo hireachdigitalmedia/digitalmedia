@@ -8,7 +8,7 @@ export function IntroSection() {
   return (
     <Section tone="raised">
       <SectionHeading title={title} subtitle={subtitle} />
-      <CardGrid>
+      <CardGrid data-stagger>
         {highlights.map((item) => (
           <IconCard key={item.title} layout="inline" {...item} />
         ))}

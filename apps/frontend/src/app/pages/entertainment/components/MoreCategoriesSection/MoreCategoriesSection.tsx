@@ -6,7 +6,7 @@ import { CategoryGrid } from './MoreCategoriesSection.style';
 export function MoreCategoriesSection() {
   return (
     <Section tone="raised">
-      <CategoryGrid>
+      <CategoryGrid data-stagger>
         {MORE_CATEGORIES.map((category) => (
           <MediaCard key={category.title} {...category} />
         ))}

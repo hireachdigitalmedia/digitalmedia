@@ -20,7 +20,7 @@ export function MediaPairSection({ content, id, tone }: MediaPairSectionProps) {
   return (
     <Section id={id} tone={tone}>
       <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
-      <PairGrid>
+      <PairGrid data-stagger>
         {items.map((item) => (
           <MediaCard key={item.title} {...item} />
         ))}

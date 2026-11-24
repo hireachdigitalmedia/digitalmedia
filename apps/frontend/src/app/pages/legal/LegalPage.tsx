@@ -13,7 +13,7 @@ export function LegalPage() {
         <PolicyLinks />
       </PageIntro>
       <Section tone="raised" maxWidth="md">
-        <PolicyList>
+        <PolicyList data-stagger>
           {POLICIES.map((policy) => (
             <PolicyCard key={policy.id} {...policy} />
           ))}

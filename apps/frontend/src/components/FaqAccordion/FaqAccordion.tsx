@@ -17,7 +17,7 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
   const baseId = useId();
 
   return (
-    <FaqList>
+    <FaqList data-stagger>
       {faqs.map((faq, index) => {
         const id = `${baseId}-${index}`;
         return (

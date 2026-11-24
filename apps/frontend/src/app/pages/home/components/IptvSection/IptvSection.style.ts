@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { hoverLift } from '../../../../../theme/effects';
 
 export const FeatureGrid = styled('ul')(({ theme }) => ({
   listStyle: 'none',
@@ -20,4 +21,5 @@ export const FeatureItem = styled('li')(({ theme }) => ({
   border: `1px solid ${theme.palette.outline.variant}`,
   backgroundColor: theme.palette.surface.container,
   '& .MuiSvgIcon-root': { color: theme.palette.primary.main },
+  ...hoverLift(theme),
 }));

@@ -1,4 +1,5 @@
 import { alpha, styled } from '@mui/material/styles';
+import { EASE_OUT, MOTION_OK } from '../../theme/effects';
 
 export const FrameRoot = styled('div', {
   shouldForwardProp: (prop) => prop !== 'glow',
@@ -19,7 +20,9 @@ export const FrameRoot = styled('div', {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
+    transition: `transform 900ms ${EASE_OUT}`,
   },
+  [MOTION_OK]: { '&:hover > img': { transform: 'scale(1.04)' } },
   // Shared grade: soft bottom fade + inner highlight so every image sits in the same light.
   '&::after': {
     content: '""',

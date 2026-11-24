@@ -14,7 +14,7 @@ export interface PathwayCardsProps {
 /** Selectable enquiry pathways; the choice drives the form's "Enquiry Type". */
 export function PathwayCards({ selected, onSelect }: PathwayCardsProps) {
   return (
-    <PathwayList role="radiogroup" aria-label="Enquiry type">
+    <PathwayList data-stagger role="radiogroup" aria-label="Enquiry type">
       {PATHWAYS.map(({ type, icon: Icon, title, description }) => (
         <PathwayButton
           key={type}

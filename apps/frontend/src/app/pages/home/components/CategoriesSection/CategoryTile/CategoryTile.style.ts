@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import { hoverLift } from '../../../../../../theme/effects';
 
 export const TileLink = styled(Link)(({ theme }) => ({
   position: 'relative',
@@ -10,6 +11,7 @@ export const TileLink = styled(Link)(({ theme }) => ({
   border: `1px solid ${theme.palette.outline.variant}`,
   color: theme.palette.text.primary,
   textDecoration: 'none',
+  ...hoverLift(theme),
   '&::after': {
     content: '""',
     position: 'absolute',

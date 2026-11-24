@@ -22,7 +22,7 @@ export function IntroCards({
       <div>
         <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
       </div>
-      <CardPair>
+      <CardPair data-stagger>
         {highlights.map((item) => (
           <IconCard key={item.title} {...item} />
         ))}

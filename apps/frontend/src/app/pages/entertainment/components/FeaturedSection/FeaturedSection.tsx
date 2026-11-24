@@ -6,7 +6,7 @@ import { FeaturedGrid } from './FeaturedSection.style';
 export function FeaturedSection() {
   return (
     <Section>
-      <FeaturedGrid>
+      <FeaturedGrid data-stagger>
         {FEATURED_CATEGORIES.map((category) => (
           <MediaCard key={category.title} size="lg" {...category} />
         ))}

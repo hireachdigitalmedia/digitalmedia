@@ -9,6 +9,7 @@ import {
   ROUTES,
   type NavItem,
 } from '../../router/routes';
+import { useScrolled } from '../../hooks/useScrolled';
 import { BrandLogo } from '../BrandLogo';
 import {
   DesktopNav,
@@ -36,6 +37,7 @@ function useIsActive() {
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrolled = useScrolled();
   const isActive = useIsActive();
 
   const renderLinks = (onClick?: () => void) =>
@@ -53,9 +55,9 @@ export function Header() {
     ));
 
   return (
-    <HeaderBar position="sticky" elevation={0}>
+    <HeaderBar position="fixed" elevation={0} scrolled={scrolled}>
       <Container maxWidth="xl">
-        <HeaderInner>
+        <HeaderInner className="header-inner">
           <BrandLogo />
           <DesktopNav aria-label="Main">{renderLinks()}</DesktopNav>
           <HeaderActions>

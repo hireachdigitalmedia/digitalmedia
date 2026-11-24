@@ -19,7 +19,11 @@ export const PathwayButton = styled('button', {
   borderRadius: 16,
   backgroundColor: theme.palette.surface.container,
   border: `1px solid ${selected ? theme.palette.primary.main : theme.palette.outline.variant}`,
-  transition: theme.transitions.create(['border-color', 'background-color']),
+  transition:
+    'border-color 250ms ease, background-color 250ms ease, transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1)',
+  '@media (prefers-reduced-motion: no-preference)': {
+    '&:hover': { transform: 'translateX(4px)' },
+  },
   '&:hover': {
     borderColor: selected
       ? theme.palette.primary.main

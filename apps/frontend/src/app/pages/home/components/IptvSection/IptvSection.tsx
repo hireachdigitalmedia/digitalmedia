@@ -15,7 +15,7 @@ export function IptvSection() {
     <Section id={SECTION_IDS.iptv}>
       <MediaSplit visual={visual}>
         <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
-        <FeatureGrid>
+        <FeatureGrid data-stagger>
           {features.map(({ icon: Icon, label }) => (
             <FeatureItem key={label}>
               <Icon aria-hidden />

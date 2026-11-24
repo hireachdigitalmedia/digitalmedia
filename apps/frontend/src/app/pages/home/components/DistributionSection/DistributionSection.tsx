@@ -32,7 +32,7 @@ export function DistributionSection() {
       <DistributionGrid>
         <div>
           <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
-          <ChipList aria-label="Partner types">
+          <ChipList data-stagger aria-label="Partner types">
             {partnerTypes.map((type) => (
               <Chip key={type}>{type}</Chip>
             ))}

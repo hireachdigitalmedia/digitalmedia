@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { scrollToElement } from '../utils/scroll';
 
 /**
  * Scrolls to `#section` links after navigation, or to the top for normal page changes.
@@ -20,9 +21,8 @@ export function useScrollToHash() {
     }
     // Wait a frame so the target page has rendered.
     const frame = requestAnimationFrame(() => {
-      document
-        .getElementById(decodeURIComponent(hash.slice(1)))
-        ?.scrollIntoView({ behavior: samePage ? 'smooth' : 'auto' });
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (target) scrollToElement(target, samePage ? 'smooth' : 'auto');
     });
     return () => cancelAnimationFrame(frame);
   }, [pathname, hash]);

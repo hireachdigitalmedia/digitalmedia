@@ -1,11 +1,11 @@
 import { Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { hoverLift } from '../../theme/effects';
 
 export const IconCardRoot = styled(Card)(({ theme }) => ({
   height: '100%',
   padding: theme.spacing(4.5),
-  transition: theme.transitions.create('border-color'),
-  '&:hover': { borderColor: theme.palette.outline.main },
+  ...hoverLift(theme),
   [theme.breakpoints.down('sm')]: { padding: theme.spacing(3) },
 }));
 

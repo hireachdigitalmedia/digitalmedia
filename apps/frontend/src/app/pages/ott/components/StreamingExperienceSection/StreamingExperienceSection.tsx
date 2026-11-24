@@ -8,7 +8,7 @@ export function StreamingExperienceSection() {
   return (
     <Section tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
-      <FeatureGrid>
+      <FeatureGrid data-stagger>
         {features.map((feature) => (
           <IconCard key={feature.title} {...feature} />
         ))}

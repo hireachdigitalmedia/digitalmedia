@@ -1,5 +1,6 @@
 import { Card } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
+import { hoverLift } from '../../theme/effects';
 
 type Accent = 'primary' | 'tertiary';
 export type InfoCardVariant = 'default' | 'brand';
@@ -12,6 +13,7 @@ export const InfoCardRoot = styled(Card, {
   borderColor: highlighted
     ? alpha(theme.palette.primary.main, 0.5)
     : theme.palette.outline.variant,
+  ...hoverLift(theme),
   [theme.breakpoints.down('sm')]: { padding: theme.spacing(3.5) },
 }));
 

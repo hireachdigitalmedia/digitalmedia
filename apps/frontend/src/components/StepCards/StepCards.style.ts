@@ -1,5 +1,6 @@
 import { Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { hoverLift } from '../../theme/effects';
 
 export const StepGrid = styled('ol', {
   shouldForwardProp: (prop) => prop !== 'columns',
@@ -21,4 +22,5 @@ export const StepCard = styled(Card)(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'flex-start',
   gap: theme.spacing(2.5),
+  ...hoverLift(theme),
 }));

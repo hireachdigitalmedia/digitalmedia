@@ -13,7 +13,7 @@ export function EcosystemSection() {
   return (
     <Section>
       <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
-      <EcosystemRow>
+      <EcosystemRow data-stagger>
         {brands.map((brand, index) => (
           <Fragment key={brand.title}>
             {index > 0 && (

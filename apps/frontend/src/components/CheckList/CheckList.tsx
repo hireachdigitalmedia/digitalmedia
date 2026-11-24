@@ -9,7 +9,7 @@ export interface CheckListProps {
 /** List with orange check-circle bullets. */
 export function CheckList({ items, columns = 1 }: CheckListProps) {
   return (
-    <List columns={columns}>
+    <List data-stagger columns={columns}>
       {items.map((item) => (
         <Item key={item}>
           <CheckCircleOutlined aria-hidden />

@@ -10,7 +10,7 @@ export interface DeviceGridProps {
 /** Row of device cards with a round icon tile and label. */
 export function DeviceGrid({ devices }: DeviceGridProps) {
   return (
-    <Grid>
+    <Grid data-stagger>
       {devices.map(({ icon, label }) => (
         <li key={label}>
           <DeviceCard>

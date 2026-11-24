@@ -25,7 +25,13 @@ export function IconTile({
   tone = 'primary',
 }: IconTileProps) {
   return (
-    <IconTileRoot shape={shape} size={size} tone={tone} aria-hidden>
+    <IconTileRoot
+      className="icon-tile"
+      shape={shape}
+      size={size}
+      tone={tone}
+      aria-hidden
+    >
       {Icon ? <Icon /> : children}
     </IconTileRoot>
   );

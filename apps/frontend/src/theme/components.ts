@@ -32,7 +32,13 @@ export const components: Components<Theme> = {
         borderRadius: radius.sm,
         padding: '10px 20px',
         transition:
-          'background-color 150ms ease, border-color 150ms ease, color 150ms ease',
+          'background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 200ms ease, transform 150ms ease',
+        '& .MuiButton-endIcon': { transition: 'transform 200ms ease' },
+        '&:hover .MuiButton-endIcon': { transform: 'translateX(3px)' },
+        '&:active': { transform: 'scale(0.98)' },
+        '@media (prefers-reduced-motion: reduce)': {
+          '&:hover .MuiButton-endIcon, &:active': { transform: 'none' },
+        },
       },
       sizeLarge: { padding: '12px 24px', fontSize: '0.9375rem' },
       sizeSmall: { padding: '6px 14px' },
@@ -44,7 +50,10 @@ export const components: Components<Theme> = {
         style: {
           backgroundColor: colors.primary,
           color: colors.onPrimary,
-          '&:hover': { backgroundColor: colors.primaryHover },
+          '&:hover': {
+            backgroundColor: colors.primaryHover,
+            boxShadow: `0 8px 24px -8px ${alpha(colors.primary, 0.6)}`,
+          },
           '&.Mui-disabled': {
             backgroundColor: alpha(colors.primary, 0.4),
             color: alpha(colors.onPrimary, 0.7),

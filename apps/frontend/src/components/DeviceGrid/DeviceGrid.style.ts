@@ -1,5 +1,6 @@
 import { Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { hoverLift } from '../../theme/effects';
 
 export const Grid = styled('ul')(({ theme }) => ({
   listStyle: 'none',
@@ -20,4 +21,5 @@ export const DeviceCard = styled(Card)(({ theme }) => ({
   gap: theme.spacing(2.5),
   padding: theme.spacing(4.5, 2),
   textAlign: 'center',
+  ...hoverLift(theme),
 }));

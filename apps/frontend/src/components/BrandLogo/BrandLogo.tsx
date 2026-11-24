@@ -9,7 +9,11 @@ export interface BrandLogoProps {
 
 export function BrandLogo({ size = 'md' }: BrandLogoProps) {
   return (
-    <LogoLink to={ROUTES.home} aria-label={`${env.appName} home`}>
+    <LogoLink
+      className="brand-logo"
+      to={ROUTES.home}
+      aria-label={`${env.appName} home`}
+    >
       <LogoImage
         src="/logo-light.png"
         alt={env.appName}

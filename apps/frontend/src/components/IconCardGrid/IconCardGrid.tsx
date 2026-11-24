@@ -11,7 +11,7 @@ export interface IconCardGridProps {
 /** Grid of IconCards; the last card stretches to fill an incomplete final row. */
 export function IconCardGrid({ items, columns = 3 }: IconCardGridProps) {
   return (
-    <Grid columns={columns}>
+    <Grid data-stagger columns={columns}>
       {items.map((item, index) => (
         <div
           key={item.title}

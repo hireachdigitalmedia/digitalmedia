@@ -21,7 +21,12 @@ export function MediaCarousel({
   label,
 }: MediaCarouselProps) {
   return (
-    <CarouselList ref={ref} cardWidth={cardWidth} aria-label={label}>
+    <CarouselList
+      data-stagger
+      ref={ref}
+      cardWidth={cardWidth}
+      aria-label={label}
+    >
       {items.map((item) => (
         <li key={item.title}>
           <MediaCard {...item} />

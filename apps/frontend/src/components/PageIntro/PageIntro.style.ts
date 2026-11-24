@@ -1,4 +1,5 @@
 import { alpha, styled } from '@mui/material/styles';
+import { enter } from '../../theme/effects';
 
 export const IntroRoot = styled('section')(({ theme }) => ({
   padding: theme.spacing(14, 0, 12),
@@ -7,6 +8,7 @@ export const IntroRoot = styled('section')(({ theme }) => ({
 }));
 
 export const Eyebrow = styled('span')(({ theme }) => ({
+  ...enter(0),
   ...theme.typography.overline,
   fontSize: '0.875rem',
   display: 'block',
@@ -15,6 +17,7 @@ export const Eyebrow = styled('span')(({ theme }) => ({
 }));
 
 export const Title = styled('h1')(({ theme }) => ({
+  ...enter(100),
   ...theme.typography.displayLg,
   fontSize: '4rem',
   margin: 0,
@@ -22,6 +25,7 @@ export const Title = styled('h1')(({ theme }) => ({
 }));
 
 export const Subtitle = styled('p')(({ theme }) => ({
+  ...enter(220),
   ...theme.typography.bodyLg,
   fontSize: '1.25rem',
   lineHeight: 1.6,
@@ -31,5 +35,6 @@ export const Subtitle = styled('p')(({ theme }) => ({
 }));
 
 export const Extra = styled('div')(({ theme }) => ({
+  ...enter(320),
   marginTop: theme.spacing(4),
 }));

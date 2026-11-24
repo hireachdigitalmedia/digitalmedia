@@ -5,7 +5,7 @@ import { TwoColumnGrid } from './VisionMissionSection.style';
 export function VisionMissionSection() {
   return (
     <Section tone="raised">
-      <TwoColumnGrid>
+      <TwoColumnGrid data-stagger>
         {VISION_MISSION.map((item) => (
           <InfoCard key={item.eyebrow} {...item} />
         ))}

@@ -1,4 +1,5 @@
 import { alpha, styled } from '@mui/material/styles';
+import { enter, fadeScale } from '../../theme/effects';
 
 export type HeroSize = 'xl' | 'lg';
 
@@ -9,6 +10,7 @@ export const HeroRoot = styled('section')(({ theme }) => ({
 }));
 
 export const HeroGrid = styled('div')(({ theme }) => ({
+  '& > :last-child': enter(250, fadeScale),
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
   alignItems: 'center',
@@ -17,6 +19,7 @@ export const HeroGrid = styled('div')(({ theme }) => ({
 }));
 
 export const Badge = styled('span')(({ theme }) => ({
+  ...enter(0),
   ...theme.typography.labelLg,
   display: 'inline-flex',
   alignItems: 'center',
@@ -39,6 +42,7 @@ export const Badge = styled('span')(({ theme }) => ({
 export const HeroTitle = styled('h1', {
   shouldForwardProp: (prop) => prop !== 'size',
 })<{ size: HeroSize }>(({ theme, size }) => ({
+  ...enter(100),
   ...theme.typography.displayLg,
   fontSize: size === 'xl' ? '4.5rem' : '3.5rem',
   lineHeight: 1.1,
@@ -53,6 +57,7 @@ export const HeroTitle = styled('h1', {
 }));
 
 export const HeroSubtitle = styled('p')(({ theme }) => ({
+  ...enter(220),
   ...theme.typography.bodyLg,
   fontSize: '1.25rem',
   lineHeight: 1.6,
@@ -63,6 +68,7 @@ export const HeroSubtitle = styled('p')(({ theme }) => ({
 }));
 
 export const HeroActions = styled('div')(({ theme }) => ({
+  ...enter(320),
   display: 'flex',
   flexWrap: 'wrap',
   gap: theme.spacing(2),

@@ -16,7 +16,7 @@ export function EcosystemBenefitsSection() {
 
   return (
     <Section>
-      <BenefitsGrid>
+      <BenefitsGrid data-stagger>
         <div>
           <SectionHeading eyebrow={eyebrow} title={title} />
           <FlowCard steps={flow} />

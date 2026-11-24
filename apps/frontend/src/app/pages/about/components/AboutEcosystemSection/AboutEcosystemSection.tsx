@@ -8,7 +8,7 @@ export function AboutEcosystemSection() {
   return (
     <Section tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
-      <TwoColumnGrid>
+      <TwoColumnGrid data-stagger>
         {brands.map((brand) => (
           <InfoCard key={brand.title} variant="brand" {...brand} />
         ))}

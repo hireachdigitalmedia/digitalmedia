@@ -8,7 +8,7 @@ export function WhyChooseUsSection() {
   return (
     <Section tone="raised">
       <SectionHeading eyebrow={eyebrow} title={title} />
-      <ReasonGrid>
+      <ReasonGrid data-stagger>
         {reasons.map((reason) => (
           <IconCard key={reason.title} {...reason} />
         ))}
