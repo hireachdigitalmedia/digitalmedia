@@ -3,8 +3,8 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 let theme = createTheme({
   palette: {
     mode: 'light',
-    primary: { main: '#1F4FFF' },
-    secondary: { main: '#FF6B35' },
+    primary: { main: '#0B2E83' },
+    secondary: { main: '#E31B23' },
     background: { default: '#FFFFFF', paper: '#F7F8FC' },
   },
   shape: { borderRadius: 10 },
