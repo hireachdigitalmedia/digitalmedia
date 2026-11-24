@@ -1,5 +1,4 @@
 import familyImage from '../../../../assets/home-image/family.webp';
-import liveTvImage from '../../../../assets/home-image/live-tv.webp';
 import regionalImage from '../../../../assets/home-image/regional.webp';
 import sportsImage from '../../../../assets/home-image/sports.webp';
 import webSeriesImage from '../../../../assets/home-image/web-series.webp';
@@ -22,7 +21,7 @@ export const FEATURED_CATEGORIES: MediaItem[] = [
     title: 'Live TV',
     description:
       'Real-time television programming with electronic programme guide navigation through IPTV services.',
-    image: liveTvImage,
+    visual: 'tv-guide',
   },
 ];
 

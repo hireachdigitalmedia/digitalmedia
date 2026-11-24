@@ -2,6 +2,9 @@ import type { SvgIconComponent } from '@mui/icons-material';
 
 /** Content shapes shared by several pages. */
 
+/** Coded visuals that can stand in for a photo (see components/MediaVisual). */
+export type VisualKey = 'tv-guide';
+
 export interface ImageAsset {
   src: string;
   alt: string;
@@ -41,7 +44,9 @@ export interface Faq {
 export interface MediaItem {
   title: string;
   description: string;
-  image: string;
+  /** Photo URL, or use `visual` for a coded illustration. */
+  image?: string;
+  visual?: VisualKey;
   /** Small label above the title, e.g. "Category". */
   eyebrow?: string;
   /** Anchor id so other pages can link straight to this card. */

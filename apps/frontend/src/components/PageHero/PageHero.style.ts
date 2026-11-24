@@ -67,12 +67,3 @@ export const HeroActions = styled('div')(({ theme }) => ({
   flexWrap: 'wrap',
   gap: theme.spacing(2),
 }));
-
-export const HeroImage = styled('img')(({ theme }) => ({
-  width: '100%',
-  height: 'auto',
-  aspectRatio: '16 / 9',
-  objectFit: 'cover',
-  borderRadius: 24,
-  border: `1px solid ${theme.palette.outline.variant}`,
-}));

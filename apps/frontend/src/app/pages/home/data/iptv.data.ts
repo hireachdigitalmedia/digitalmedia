@@ -5,7 +5,6 @@ import TheatersOutlined from '@mui/icons-material/TheatersOutlined';
 import TuneOutlined from '@mui/icons-material/TuneOutlined';
 import TvOutlined from '@mui/icons-material/TvOutlined';
 import type { IconLabel } from '../../../../data/types';
-import iptvImage from '../../../../assets/home-image/live-tv.webp';
 import { ROUTES } from '../../../../router/routes';
 
 export const IPTV_CONTENT = {
@@ -22,8 +21,5 @@ export const IPTV_CONTENT = {
     { icon: CastConnectedOutlined, label: 'Digital television experiences' },
   ] satisfies IconLabel[],
   cta: { label: 'Explore IPTV Services', to: ROUTES.iptv },
-  image: {
-    src: iptvImage,
-    alt: 'A smart TV showing streaming apps in a dim room',
-  },
+  visual: 'tv-guide' as const,
 };

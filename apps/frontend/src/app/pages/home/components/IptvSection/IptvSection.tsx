@@ -9,11 +9,11 @@ import { IPTV_CONTENT } from '../../data';
 import { FeatureGrid, FeatureItem } from './IptvSection.style';
 
 export function IptvSection() {
-  const { eyebrow, title, subtitle, features, cta, image } = IPTV_CONTENT;
+  const { eyebrow, title, subtitle, features, cta, visual } = IPTV_CONTENT;
 
   return (
     <Section id={SECTION_IDS.iptv}>
-      <MediaSplit image={image}>
+      <MediaSplit visual={visual}>
         <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
         <FeatureGrid>
           {features.map(({ icon: Icon, label }) => (

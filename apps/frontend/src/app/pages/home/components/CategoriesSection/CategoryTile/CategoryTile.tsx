@@ -1,11 +1,23 @@
 import ArrowForward from '@mui/icons-material/ArrowForward';
+import { MediaVisual } from '../../../../../../components';
 import type { Category } from '../../../data';
-import { TileFooter, TileImage, TileLink } from './CategoryTile.style';
+import {
+  TileFooter,
+  TileImage,
+  TileLink,
+  TileVisual,
+} from './CategoryTile.style';
 
-export function CategoryTile({ title, image, to }: Category) {
+export function CategoryTile({ title, image, visual, to }: Category) {
   return (
     <TileLink to={to}>
-      <TileImage src={image} alt="" width={900} height={640} loading="lazy" />
+      {visual ? (
+        <TileVisual>
+          <MediaVisual visual={visual} compact />
+        </TileVisual>
+      ) : (
+        <TileImage src={image} alt="" width={900} height={640} loading="lazy" />
+      )}
       <TileFooter>
         {title}
         <ArrowForward className="tile-arrow" aria-hidden />

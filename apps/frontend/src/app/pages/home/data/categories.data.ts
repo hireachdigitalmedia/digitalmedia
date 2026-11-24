@@ -1,14 +1,15 @@
 import familyImage from '../../../../assets/home-image/family.webp';
-import liveTvImage from '../../../../assets/home-image/live-tv.webp';
 import moviesImage from '../../../../assets/home-image/movies.webp';
 import regionalImage from '../../../../assets/home-image/regional.webp';
 import sportsImage from '../../../../assets/home-image/sports.webp';
 import webSeriesImage from '../../../../assets/home-image/web-series.webp';
+import type { VisualKey } from '../../../../data/types';
 import { CATEGORY_IDS, categoryLink } from '../../../../router/routes';
 
 export interface Category {
   title: string;
-  image: string;
+  image?: string;
+  visual?: VisualKey;
   to: string;
 }
 
@@ -28,7 +29,7 @@ export const CATEGORIES_CONTENT = {
     },
     {
       title: 'Live Television',
-      image: liveTvImage,
+      visual: 'tv-guide',
       to: categoryLink(CATEGORY_IDS.liveTv),
     },
     {

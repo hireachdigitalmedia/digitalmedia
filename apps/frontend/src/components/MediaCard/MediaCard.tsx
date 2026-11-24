@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import type { MediaItem } from '../../data/types';
+import { MediaVisual } from '../MediaVisual';
 import {
   CardBody,
   CardEyebrow,
@@ -19,6 +20,7 @@ export function MediaCard({
   title,
   description,
   image,
+  visual,
   eyebrow,
   id,
   size = 'md',
@@ -26,7 +28,17 @@ export function MediaCard({
   return (
     <MediaCardRoot id={id}>
       <ImageWrapper>
-        <CardImage src={image} alt="" width={900} height={640} loading="lazy" />
+        {visual ? (
+          <MediaVisual visual={visual} compact />
+        ) : (
+          <CardImage
+            src={image}
+            alt=""
+            width={900}
+            height={640}
+            loading="lazy"
+          />
+        )}
       </ImageWrapper>
       <CardBody size={size}>
         {eyebrow && <CardEyebrow>{eyebrow}</CardEyebrow>}

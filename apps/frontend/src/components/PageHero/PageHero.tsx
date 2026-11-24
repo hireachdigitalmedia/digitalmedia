@@ -1,11 +1,11 @@
 import { Container } from '@mui/material';
-import type { CtaAction, ImageAsset } from '../../data/types';
+import type { CtaAction, ImageAsset, VisualKey } from '../../data/types';
 import { ActionButton } from '../ActionButton';
+import { MediaFrame } from '../MediaFrame';
 import {
   Badge,
   HeroActions,
   HeroGrid,
-  HeroImage,
   HeroRoot,
   HeroSubtitle,
   HeroTitle,
@@ -19,7 +19,10 @@ export interface PageHeroProps {
   subtitle: string;
   primaryAction?: CtaAction;
   secondaryAction?: CtaAction;
-  image: ImageAsset;
+  /** Photo for the right-hand side… */
+  image?: ImageAsset;
+  /** …or a coded visual instead. */
+  visual?: VisualKey;
   /** "xl" for the home page, "lg" for inner pages. */
   size?: HeroSize;
 }
@@ -32,6 +35,7 @@ export function PageHero({
   primaryAction,
   secondaryAction,
   image,
+  visual,
   size = 'lg',
 }: PageHeroProps) {
   return (
@@ -55,12 +59,7 @@ export function PageHero({
               </HeroActions>
             )}
           </div>
-          <HeroImage
-            src={image.src}
-            alt={image.alt}
-            width={1400}
-            height={1000}
-          />
+          <MediaFrame image={image} visual={visual} glow />
         </HeroGrid>
       </Container>
     </HeroRoot>

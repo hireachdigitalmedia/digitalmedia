@@ -33,6 +33,15 @@ export const TileImage = styled('img')(({ theme }) => ({
   transition: theme.transitions.create('transform', { duration: 400 }),
 }));
 
+/** Holds a coded visual in place of a photo. */
+export const TileVisual = styled('div')(({ theme }) => ({
+  position: 'absolute',
+  inset: 0,
+  opacity: 0.6, // keep the tile title readable over the guide
+  transition: theme.transitions.create('transform', { duration: 400 }),
+  '& > *': { height: '100%' },
+}));
+
 export const TileFooter = styled('span')(({ theme }) => ({
   position: 'absolute',
   left: theme.spacing(3.5),
