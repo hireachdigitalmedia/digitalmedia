@@ -3,9 +3,8 @@ import LinkOutlined from '@mui/icons-material/LinkOutlined';
 import { Button } from '@mui/material';
 import { Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Section, SectionHeading } from '../../../../../components';
+import { InfoCard, Section, SectionHeading } from '../../../../../components';
 import { ECOSYSTEM_CONTENT } from '../../data';
-import { EcosystemCard } from './EcosystemCard';
 import { EcosystemRow, LinkBadge } from './EcosystemSection.style';
 
 export function EcosystemSection() {
@@ -16,13 +15,13 @@ export function EcosystemSection() {
       <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
       <EcosystemRow>
         {brands.map((brand, index) => (
-          <Fragment key={brand.name}>
+          <Fragment key={brand.title}>
             {index > 0 && (
               <LinkBadge aria-hidden>
                 <LinkOutlined />
               </LinkBadge>
             )}
-            <EcosystemCard {...brand} />
+            <InfoCard variant="brand" {...brand} />
           </Fragment>
         ))}
       </EcosystemRow>

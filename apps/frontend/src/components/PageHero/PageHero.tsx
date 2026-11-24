@@ -17,7 +17,7 @@ export interface PageHeroProps {
   /** A string, or an array to force one line per item. */
   title: string | string[];
   subtitle: string;
-  primaryAction: CtaAction;
+  primaryAction?: CtaAction;
   secondaryAction?: CtaAction;
   image: ImageAsset;
   /** "xl" for the home page, "lg" for inner pages. */
@@ -46,12 +46,14 @@ export function PageHero({
                 : title}
             </HeroTitle>
             <HeroSubtitle>{subtitle}</HeroSubtitle>
-            <HeroActions>
-              <ActionButton action={primaryAction} arrow />
-              {secondaryAction && (
-                <ActionButton action={secondaryAction} variant="outlined" />
-              )}
-            </HeroActions>
+            {(primaryAction || secondaryAction) && (
+              <HeroActions>
+                {primaryAction && <ActionButton action={primaryAction} arrow />}
+                {secondaryAction && (
+                  <ActionButton action={secondaryAction} variant="outlined" />
+                )}
+              </HeroActions>
+            )}
           </div>
           <HeroImage
             src={image.src}

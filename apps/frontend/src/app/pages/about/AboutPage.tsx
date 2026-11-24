@@ -1,25 +1,23 @@
-import { Container } from '@mui/material';
-import { SectionHeading } from '../../../components';
+import { CtaBanner, PageHero } from '../../../components';
 import { useDocumentTitle } from '../../../hooks';
-import { IntroSection } from './AboutPage.style';
-import { ValuesSection } from './components';
-import { ABOUT_INTRO } from './data';
+import { AboutPageRoot } from './AboutPage.style';
+import {
+  AboutEcosystemSection,
+  FocusSection,
+  VisionMissionSection,
+} from './components';
+import { ABOUT_CTA, ABOUT_HERO } from './data';
 
 export function AboutPage() {
-  useDocumentTitle('About');
+  useDocumentTitle('About Us');
 
   return (
-    <>
-      <IntroSection>
-        <Container maxWidth="md">
-          <SectionHeading
-            as="h1"
-            title={ABOUT_INTRO.title}
-            subtitle={ABOUT_INTRO.subtitle}
-          />
-        </Container>
-      </IntroSection>
-      <ValuesSection />
-    </>
+    <AboutPageRoot>
+      <PageHero {...ABOUT_HERO} />
+      <VisionMissionSection />
+      <FocusSection />
+      <AboutEcosystemSection />
+      <CtaBanner {...ABOUT_CTA} tone="base" />
+    </AboutPageRoot>
   );
 }

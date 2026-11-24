@@ -47,3 +47,15 @@ export interface MediaItem {
   /** Anchor id so other pages can link straight to this card. */
   id?: string;
 }
+
+/** Text card: label, title and description, with optional icon and accent. */
+export interface InfoItem {
+  eyebrow: string;
+  title: string;
+  description: string;
+  icon?: SvgIconComponent;
+  /** Colour of the label/icon. */
+  accent?: 'primary' | 'tertiary';
+  /** Orange border to make the card stand out. */
+  highlighted?: boolean;
+}

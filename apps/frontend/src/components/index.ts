@@ -12,6 +12,7 @@ export * from './Header';
 export * from './IconCard';
 export * from './IconCardGrid';
 export * from './IconTile';
+export * from './InfoCard';
 export * from './IntroCards';
 export * from './MediaCard';
 export * from './MediaCarousel';
