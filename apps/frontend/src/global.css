@@ -11,6 +11,11 @@ body,
   min-height: 100%;
 }
 
+html {
+  /* keeps #section targets clear of the sticky header */
+  scroll-padding-top: 88px;
+}
+
 img {
   max-width: 100%;
   display: block;

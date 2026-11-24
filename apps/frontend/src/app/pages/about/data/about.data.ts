@@ -1,7 +1,7 @@
 // Placeholder copy — replace with final content.
 
 export const ABOUT_INTRO = {
-  title: 'About HiReach Digital Media',
+  title: 'About Hi Reach Digital Media',
   subtitle:
     'We help businesses grow their reach online through strategy, creative and technology.',
 };

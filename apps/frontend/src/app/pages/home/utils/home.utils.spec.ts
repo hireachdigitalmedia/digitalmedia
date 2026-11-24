@@ -1,21 +1,18 @@
-import { getFeaturedServices } from './home.utils';
+import { formatStepNumber, getCarouselStep } from './home.utils';
 
-const services = [
-  { id: 'a', title: 'A', description: '' },
-  { id: 'b', title: 'B', description: '' },
-  { id: 'c', title: 'C', description: '' },
-];
-
-describe('getFeaturedServices', () => {
-  it('returns the first N services', () => {
-    expect(getFeaturedServices(services, 2).map((s) => s.id)).toEqual([
-      'a',
-      'b',
-    ]);
+describe('getCarouselStep', () => {
+  it('scrolls by the viewport minus one card', () => {
+    expect(getCarouselStep(1200, 300, 24)).toBe(876);
   });
 
-  it('handles counts larger than the list and negative counts', () => {
-    expect(getFeaturedServices(services, 10)).toHaveLength(3);
-    expect(getFeaturedServices(services, -1)).toHaveLength(0);
+  it('always scrolls at least one card on narrow viewports', () => {
+    expect(getCarouselStep(320, 300, 24)).toBe(324);
+  });
+});
+
+describe('formatStepNumber', () => {
+  it('converts a zero-based index to a 1-based label', () => {
+    expect(formatStepNumber(0)).toBe('1');
+    expect(formatStepNumber(3)).toBe('4');
   });
 });

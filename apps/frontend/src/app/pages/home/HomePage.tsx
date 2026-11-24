@@ -1,9 +1,17 @@
 import { useDocumentTitle } from '../../../hooks';
 import {
-  CtaSection,
+  CategoriesSection,
+  DevicesSection,
+  DistributionSection,
+  EcosystemSection,
+  FaqSection,
+  FinalCtaSection,
+  GettingStartedSection,
   HeroSection,
-  ServicesPreview,
-  WhyChooseUs,
+  IntroSection,
+  IptvSection,
+  OttSection,
+  WhyChooseUsSection,
 } from './components';
 import { HomePageRoot } from './HomePage.style';
 
@@ -13,9 +21,17 @@ export function HomePage() {
   return (
     <HomePageRoot>
       <HeroSection />
-      <ServicesPreview />
-      <WhyChooseUs />
-      <CtaSection />
+      <IntroSection />
+      <IptvSection />
+      <OttSection />
+      <CategoriesSection />
+      <WhyChooseUsSection />
+      <DevicesSection />
+      <DistributionSection />
+      <EcosystemSection />
+      <GettingStartedSection />
+      <FaqSection />
+      <FinalCtaSection />
     </HomePageRoot>
   );
 }

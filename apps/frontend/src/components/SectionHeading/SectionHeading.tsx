@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { Eyebrow, HeadingRoot } from './SectionHeading.style';
+import { Eyebrow, HeadingRoot, Subtitle } from './SectionHeading.style';
 
 export interface SectionHeadingProps {
   title: string;
@@ -8,6 +8,8 @@ export interface SectionHeadingProps {
   align?: 'left' | 'center';
   /** Use "h1" when the heading is the page title. */
   as?: 'h1' | 'h2';
+  /** Remove the bottom margin (e.g. when the heading sits in a row with a button). */
+  disableGutter?: boolean;
 }
 
 export function SectionHeading({
@@ -16,22 +18,15 @@ export function SectionHeading({
   eyebrow,
   align = 'left',
   as = 'h2',
+  disableGutter,
 }: SectionHeadingProps) {
   return (
-    <HeadingRoot align={align}>
+    <HeadingRoot align={align} sx={disableGutter ? { mb: 0 } : undefined}>
       {eyebrow && <Eyebrow variant="overline">{eyebrow}</Eyebrow>}
-      <Typography
-        variant={as === 'h1' ? 'headlineLg' : 'headlineMd'}
-        component={as}
-        gutterBottom
-      >
+      <Typography variant="headlineLg" component={as}>
         {title}
       </Typography>
-      {subtitle && (
-        <Typography variant="bodyLg" color="text.secondary">
-          {subtitle}
-        </Typography>
-      )}
+      {subtitle && <Subtitle variant="bodyLg">{subtitle}</Subtitle>}
     </HeadingRoot>
   );
 }

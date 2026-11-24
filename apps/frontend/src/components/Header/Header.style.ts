@@ -1,52 +1,81 @@
-import { AppBar, Button } from '@mui/material';
+import { AppBar, Button, Drawer } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
+
+const NAV_BREAKPOINT = 1280;
 
 export const HeaderBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: alpha(theme.palette.surface.main, 0.85),
+  backgroundColor: alpha(theme.palette.surface.main, 0.9),
   backdropFilter: 'blur(12px)',
   borderBottom: `1px solid ${theme.palette.outline.variant}`,
 }));
 
-export const LogoLink = styled(Link)(({ theme }) => ({
+export const HeaderInner = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  gap: theme.spacing(1.5),
-  flexGrow: 1,
-  padding: theme.spacing(1.5, 0),
-  color: theme.palette.text.primary,
-  textDecoration: 'none',
+  gap: theme.spacing(3),
+  minHeight: 80,
 }));
 
-/** The brand mark is navy + red, so it sits on a light tile to stay legible on dark surfaces. */
-export const LogoMark = styled('img')(({ theme }) => ({
-  width: 36,
-  height: 36,
-  borderRadius: 10,
-  backgroundColor: '#FFFFFF',
-  [theme.breakpoints.down('sm')]: { width: 32, height: 32 },
-}));
-
-export const LogoText = styled('span')(({ theme }) => ({
-  ...theme.typography.titleLg,
-  fontSize: '1.125rem',
-  whiteSpace: 'nowrap',
-}));
-
-export const Nav = styled('nav')(({ theme }) => ({
+export const DesktopNav = styled('nav')(({ theme }) => ({
   display: 'flex',
-  flexWrap: 'wrap',
+  alignItems: 'center',
   gap: theme.spacing(0.5),
+  marginLeft: 'auto',
+  // 8 links need ~1280px; below that the drawer menu takes over.
+  [theme.breakpoints.down(NAV_BREAKPOINT)]: { display: 'none' },
 }));
 
-export const NavButton = styled(Button)(({ theme }) => ({
+export const NavLinkButton = styled(Button)(({ theme }) => ({
+  ...theme.typography.labelLg,
+  fontSize: '0.9375rem',
+  padding: theme.spacing(1, 1),
   color: theme.palette.text.secondary,
+  whiteSpace: 'nowrap',
   '&:hover': {
     color: theme.palette.text.primary,
-    backgroundColor: theme.palette.surface.containerHigh,
+    backgroundColor: 'transparent',
   },
-  '&.active': {
-    color: theme.palette.text.primary,
-    backgroundColor: theme.palette.surface.container,
-  },
+  '&.active': { color: theme.palette.primary.main },
 })) as typeof Button;
+
+export const HeaderActions = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: theme.spacing(1),
+  marginLeft: 'auto',
+  [theme.breakpoints.up(NAV_BREAKPOINT)]: { marginLeft: theme.spacing(1) },
+}));
+
+export const GetStartedButton = styled(Button)(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: { display: 'none' },
+})) as typeof Button;
+
+export const MenuButtonWrapper = styled('span')(({ theme }) => ({
+  [theme.breakpoints.up(NAV_BREAKPOINT)]: { display: 'none' },
+}));
+
+export const MobileDrawer = styled(Drawer)(({ theme }) => ({
+  '& .MuiDrawer-paper': {
+    width: 'min(320px, 85vw)',
+    padding: theme.spacing(2, 2, 3),
+    backgroundColor: theme.palette.surface.containerLow,
+    borderLeft: `1px solid ${theme.palette.outline.variant}`,
+  },
+}));
+
+export const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'flex-end',
+  marginBottom: theme.spacing(1),
+}));
+
+export const DrawerNav = styled('nav')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.spacing(0.5),
+  marginBottom: theme.spacing(3),
+  '& .MuiButton-root': {
+    justifyContent: 'flex-start',
+    padding: theme.spacing(1.5, 2),
+  },
+}));

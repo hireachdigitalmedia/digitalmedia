@@ -5,7 +5,10 @@ describe('App', () => {
   it('renders the home page', () => {
     render(<App />);
     expect(
-      screen.getByRole('heading', { level: 1, name: /grow your brand/i }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: /entertainment\.\s*connected\.\s*beyond limits\./i,
+      }),
     ).toBeTruthy();
   });
 });
