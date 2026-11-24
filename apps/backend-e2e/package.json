@@ -1,0 +1,24 @@
+{
+  "name": "@reach-digital-media/backend-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "nx": {
+    "name": "backend-e2e",
+    "implicitDependencies": [
+      "backend"
+    ],
+    "targets": {
+      "e2e": {
+        "command": "vitest run",
+        "outputs": [],
+        "dependsOn": [
+          "backend:serve"
+        ],
+        "options": {
+          "cwd": "apps/backend-e2e"
+        }
+      }
+    }
+  }
+}

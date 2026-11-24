@@ -1,0 +1,21 @@
+# ---------- build ----------
+FROM node:24-alpine AS build
+WORKDIR /app
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/releases ./.yarn/releases
+COPY apps/backend/package.json apps/backend/package.json
+COPY apps/backend-e2e/package.json apps/backend-e2e/package.json
+COPY apps/frontend/package.json apps/frontend/package.json
+RUN yarn install --immutable
+COPY . .
+RUN yarn nx run backend:build --configuration=production
+
+# ---------- runtime ----------
+FROM node:24-alpine AS runtime
+WORKDIR /app
+ENV NODE_ENV=production PORT=8080
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/apps/backend/dist ./dist
+USER node
+EXPOSE 8080
+CMD ["node", "dist/main.js"]

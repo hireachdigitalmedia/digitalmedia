@@ -1,0 +1,11 @@
+---
+description: Reach Digital Media monorepo conventions
+alwaysApply: true
+---
+
+- Nx + Yarn 4 workspaces monorepo. Apps live in `apps/`, shared libraries in `packages/`.
+- Frontend: React + Vite + MUI + TanStack Query (`apps/frontend`), dev server on port 3000 (`yarn ui:dev`).
+- Backend: NestJS bundled by webpack (`apps/backend`), served on port 8080 under the `/api` prefix (`yarn backend:dev`).
+- Backend features go in `apps/backend/src/app/features/<feature>/` as a Nest module (module, controller, service, dto).
+- Frontend HTTP calls go in `src/api/`, React Query hooks that wrap them go in `src/api-hooks/`. Components never call axios directly.
+- Run tasks through Nx (`yarn nx run <project>:<target>`), never with tools directly.

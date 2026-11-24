@@ -1,0 +1,32 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches: [main, development]
+
+concurrency:
+  group: pr-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+
+      - run: yarn install --immutable
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - name: Format
+        run: yarn nx format:check --base=$NX_BASE --head=$NX_HEAD
+
+      - name: Lint, typecheck, test, build (affected)
+        run: yarn nx affected -t lint typecheck test build --exclude=backend-e2e

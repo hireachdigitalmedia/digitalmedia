@@ -1,0 +1,16 @@
+{
+  "name": "@reach-digital-media/frontend",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "nx": {
+    "name": "frontend"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.6.0",
+    "@tanstack/react-query": "^5.108.4",
+    "react-router-dom": "^7.18.6"
+  }
+}

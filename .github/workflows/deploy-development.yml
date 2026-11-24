@@ -1,0 +1,36 @@
+name: Deploy Development
+
+on:
+  push:
+    branches: [development]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-development
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+
+      - run: yarn install --immutable
+
+      - name: Lint, test and build
+        run: yarn nx run-many -t lint test build -p frontend backend
+
+      - name: Build Docker images
+        run: |
+          docker build -f Dockerfile-Backend -t reach-backend:${{ github.sha }} .
+          docker build -f Dockerfile-Frontend -t reach-frontend:${{ github.sha }} .
+
+      # TODO: push the images to your container registry and deploy them to the
+      # development environment (e.g. ECR + ECS provisioned from terraformfiles/).
+      # Store registry/cloud credentials as secrets on the "development" GitHub environment.
