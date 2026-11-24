@@ -1,7 +1,7 @@
 import { AppBar, Button, Drawer } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 
-const NAV_BREAKPOINT = 1280;
+const NAV_BREAKPOINT = 1200;
 
 export const HeaderBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: alpha(theme.palette.surface.main, 0.9),
@@ -21,7 +21,7 @@ export const DesktopNav = styled('nav')(({ theme }) => ({
   alignItems: 'center',
   gap: theme.spacing(0.5),
   marginLeft: 'auto',
-  // 8 links need ~1280px; below that the drawer menu takes over.
+  // 7 links need ~1200px; below that the drawer menu takes over.
   [theme.breakpoints.down(NAV_BREAKPOINT)]: { display: 'none' },
 }));
 

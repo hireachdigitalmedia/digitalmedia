@@ -7,9 +7,7 @@ export const ROUTES = {
   about: '/about',
   services: '/services',
   contact: '/contact',
-  privacyPolicy: '/privacy-policy',
-  terms: '/terms-and-conditions',
-  refundPolicy: '/refund-policy',
+  legal: '/legal',
 } as const;
 
 /** Anchor ids of the home page sections (used for `/#id` links). */
@@ -30,6 +28,21 @@ export const CATEGORY_IDS = {
   regional: 'regional',
   family: 'family',
 } as const;
+
+/** Anchor ids of the policies on the Legal page. */
+export const LEGAL_IDS = {
+  privacy: 'privacy-policy',
+  terms: 'terms-and-conditions',
+  refund: 'refund-policy',
+} as const;
+
+/** Link to a policy on the Legal page. */
+export const legalLink = (id: string) => `${ROUTES.legal}#${id}`;
+
+/** Old standalone policy URLs → their section on the Legal page. */
+export const LEGAL_REDIRECTS: { from: string; to: string }[] = Object.values(
+  LEGAL_IDS,
+).map((id) => ({ from: `/${id}`, to: legalLink(id) }));
 
 /** Anchor ids on the Distribution Partners page. */
 export const PARTNER_SECTION_IDS = {
@@ -59,7 +72,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Distribution Partners', to: ROUTES.partners },
   { label: 'About Us', to: ROUTES.about },
   { label: 'Contact Us', to: ROUTES.contact },
-  { label: 'Customer Support', to: homeSection(SECTION_IDS.faq) },
 ];
 
 export const GET_STARTED = { label: 'Get Started', to: ROUTES.contact };
@@ -106,10 +118,9 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: 'FAQs', to: homeSection(SECTION_IDS.faq) },
       { label: 'Contact Us', to: ROUTES.contact },
-      { label: 'Customer Support', to: ROUTES.contact },
-      { label: 'Privacy Policy', to: ROUTES.privacyPolicy },
-      { label: 'Terms and Conditions', to: ROUTES.terms },
-      { label: 'Refund Policy', to: ROUTES.refundPolicy },
+      { label: 'Privacy Policy', to: legalLink(LEGAL_IDS.privacy) },
+      { label: 'Terms and Conditions', to: legalLink(LEGAL_IDS.terms) },
+      { label: 'Refund Policy', to: legalLink(LEGAL_IDS.refund) },
     ],
   },
 ];

@@ -3,6 +3,7 @@ export * from './contact';
 export * from './entertainment';
 export * from './home';
 export * from './iptv';
+export * from './legal';
 export * from './not-found';
 export * from './ott';
 export * from './partners';

@@ -18,6 +18,7 @@ export * from './MediaCard';
 export * from './MediaCarousel';
 export * from './MediaSplit';
 export * from './PageHero';
+export * from './PageIntro';
 export * from './Section';
 export * from './SectionHeading';
 export * from './ServiceCard';
