@@ -1,27 +1,39 @@
-import { toContactPayload } from './contact.utils';
+import { EMPTY_CONTACT_FORM, toContactPayload } from './contact.utils';
+
+const values = {
+  ...EMPTY_CONTACT_FORM,
+  name: ' Priya ',
+  email: 'priya@example.com',
+  phone: '+91 90000 00000',
+  city: 'Chennai',
+  message: ' Is IPTV available? ',
+  company: 'NetCo',
+  businessCategory: 'isp' as const,
+  state: 'Tamil Nadu',
+};
 
 describe('toContactPayload', () => {
-  it('trims values and omits empty optional fields', () => {
-    expect(
-      toContactPayload({
-        name: ' Jane ',
-        email: 'jane@example.com ',
-        phone: '  ',
-        company: '',
-        message: ' Hi ',
-      }),
-    ).toEqual({ name: 'Jane', email: 'jane@example.com', message: 'Hi' });
+  it('sends consumer enquiries without partner fields', () => {
+    expect(toContactPayload(values, 'consumer')).toEqual({
+      topic: 'consumer',
+      name: 'Priya',
+      email: 'priya@example.com',
+      phone: '+91 90000 00000',
+      city: 'Chennai',
+      message: 'Is IPTV available?',
+    });
   });
 
-  it('keeps optional fields when filled in', () => {
-    const payload = toContactPayload({
-      name: 'Jane',
-      email: 'jane@example.com',
-      phone: '123',
-      company: 'Acme',
-      message: 'Hi',
+  it('maps general enquiries to the general topic', () => {
+    expect(toContactPayload(values, 'general').topic).toBe('general');
+  });
+
+  it('includes business details for partner enquiries', () => {
+    expect(toContactPayload(values, 'partner')).toMatchObject({
+      topic: 'partnership',
+      company: 'NetCo',
+      businessCategory: 'isp',
+      state: 'Tamil Nadu',
     });
-    expect(payload.phone).toBe('123');
-    expect(payload.company).toBe('Acme');
   });
 });

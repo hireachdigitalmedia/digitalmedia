@@ -8,6 +8,7 @@ import {
 
 const TOPIC_LABELS: Record<ContactTopic, string> = {
   general: 'General enquiry',
+  consumer: 'Consumer enquiry',
   iptv: 'IPTV enquiry',
   ott: 'OTT enquiry',
   partnership: 'Partnership enquiry',

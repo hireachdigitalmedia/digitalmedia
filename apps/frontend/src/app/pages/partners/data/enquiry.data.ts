@@ -1,5 +1,3 @@
-import type { BusinessCategory } from '../../../../api';
-
 export const PARTNER_ENQUIRY_CONTENT = {
   eyebrow: 'Partner With Us',
   title: 'Distribution Partner Enquiry',
@@ -9,18 +7,4 @@ export const PARTNER_ENQUIRY_CONTENT = {
   submittingLabel: 'Sending…',
 };
 
-/** Options for the "Business Category" select (values match the backend). */
-export const BUSINESS_CATEGORY_OPTIONS: {
-  value: BusinessCategory;
-  label: string;
-}[] = [
-  { value: 'isp', label: 'Internet Service Provider' },
-  { value: 'broadband-operator', label: 'Broadband Operator' },
-  { value: 'cable-tv-operator', label: 'Cable TV Operator' },
-  { value: 'regional-distributor', label: 'Regional Distributor' },
-  {
-    value: 'digital-entertainment-partner',
-    label: 'Digital Entertainment Partner',
-  },
-  { value: 'other', label: 'Other' },
-];
+export { BUSINESS_CATEGORY_OPTIONS } from '../../../../data/business-categories';

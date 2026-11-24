@@ -1,5 +1,6 @@
-import { env } from '../../utils/env';
+import { env } from '../utils/env';
 
+/** Company details shown in the footer and on the Contact page. */
 export const COMPANY_INFO = {
   name: env.appName,
   tagline:

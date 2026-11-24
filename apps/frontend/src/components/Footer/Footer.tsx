@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { FOOTER_COLUMNS } from '../../router/routes';
 import { BrandLogo } from '../BrandLogo';
-import { COMPANY_INFO } from './Footer.data';
+import { COMPANY_INFO } from '../../data/company';
 import {
   BottomBar,
   BrandColumn,

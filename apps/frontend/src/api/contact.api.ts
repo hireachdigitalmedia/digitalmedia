@@ -1,7 +1,8 @@
 import { apiClient } from './client';
 
 /** Matches the backend's CONTACT_TOPICS. */
-export type ContactTopic = 'general' | 'iptv' | 'ott' | 'partnership';
+export type ContactTopic =
+  'general' | 'consumer' | 'iptv' | 'ott' | 'partnership';
 
 /** Matches the backend's BUSINESS_CATEGORIES. */
 export type BusinessCategory =

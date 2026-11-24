@@ -15,6 +15,7 @@ const trim = ({ value }: { value: unknown }) =>
 /** What the enquiry is about — used in the email subject. */
 export const CONTACT_TOPICS = [
   'general',
+  'consumer',
   'iptv',
   'ott',
   'partnership',
