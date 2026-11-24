@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers (static assets) config for the frontend.
+  // Build first (`yarn ui:build`), then `npx wrangler deploy` uploads apps/frontend/dist.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "digitalmedia",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./apps/frontend/dist",
+    // React Router handles routes like /iptv-services: serve index.html for unknown paths.
+    "not_found_handling": "single-page-application",
+  },
+}

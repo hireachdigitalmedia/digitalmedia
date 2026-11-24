@@ -25,6 +25,5 @@ export * from './PageHero';
 export * from './PageIntro';
 export * from './Section';
 export * from './SectionHeading';
-export * from './ServiceCard';
 export * from './StepCards';
 export * from './TvGuideMockup';

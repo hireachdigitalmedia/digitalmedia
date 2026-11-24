@@ -28,10 +28,6 @@ export interface ContactPayload {
 
 export const contactApi = {
   submit: async (payload: ContactPayload) => {
-    const { data } = await apiClient.post<{ message: string }>(
-      '/contact',
-      payload,
-    );
-    return data;
+    return apiClient.post<{ message: string }>('/contact', payload);
   },
 };

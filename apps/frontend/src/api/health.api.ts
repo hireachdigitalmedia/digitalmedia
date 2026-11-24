@@ -8,7 +8,6 @@ export interface HealthResponse {
 
 export const healthApi = {
   get: async () => {
-    const { data } = await apiClient.get<HealthResponse>('/health');
-    return data;
+    return apiClient.get<HealthResponse>('/health');
   },
 };

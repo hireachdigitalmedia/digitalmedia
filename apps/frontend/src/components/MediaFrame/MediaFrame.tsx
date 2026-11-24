@@ -29,6 +29,7 @@ export function MediaFrame({
           width={1400}
           height={788}
           loading={lazy ? 'lazy' : undefined}
+          fetchPriority={glow ? 'high' : undefined}
         />
       ) : null}
     </FrameRoot>

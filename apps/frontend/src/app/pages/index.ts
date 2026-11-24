@@ -7,4 +7,3 @@ export * from './legal';
 export * from './not-found';
 export * from './ott';
 export * from './partners';
-export * from './services';
