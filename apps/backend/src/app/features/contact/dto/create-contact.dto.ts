@@ -1,6 +1,7 @@
 import { Transform } from 'class-transformer';
 import {
   IsEmail,
+  IsIn,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -9,6 +10,15 @@ import {
 
 const trim = ({ value }: { value: unknown }) =>
   typeof value === 'string' ? value.trim() : value;
+
+/** What the enquiry is about — used in the email subject. */
+export const CONTACT_TOPICS = [
+  'general',
+  'iptv',
+  'ott',
+  'partnership',
+] as const;
+export type ContactTopic = (typeof CONTACT_TOPICS)[number];
 
 export class CreateContactDto {
   @Transform(trim)
@@ -35,8 +45,19 @@ export class CreateContactDto {
   company?: string;
 
   @Transform(trim)
+  @IsOptional()
   @IsString()
-  @IsNotEmpty()
+  @MaxLength(100)
+  city?: string;
+
+  @IsOptional()
+  @IsIn(CONTACT_TOPICS)
+  topic?: ContactTopic;
+
+  /** Optional: short enquiry forms (e.g. OTT) only collect contact details. */
+  @Transform(trim)
+  @IsOptional()
+  @IsString()
   @MaxLength(5000)
-  message!: string;
+  message?: string;
 }

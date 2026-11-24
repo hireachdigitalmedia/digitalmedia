@@ -4,7 +4,7 @@ import ChevronRight from '@mui/icons-material/ChevronRight';
 import { Button, IconButton } from '@mui/material';
 import { useRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Section, SectionHeading } from '../../../../../components';
+import { MediaCard, Section, SectionHeading } from '../../../../../components';
 import { SECTION_IDS } from '../../../../../router/routes';
 import { OTT_CONTENT } from '../../data';
 import { getCarouselStep } from '../../utils';
@@ -15,7 +15,6 @@ import {
   HeaderActions,
   OttHeader,
 } from './OttSection.style';
-import { PlatformCard } from './PlatformCard';
 
 export function OttSection() {
   const { eyebrow, title, subtitle, cta, platforms } = OTT_CONTENT;
@@ -59,7 +58,7 @@ export function OttSection() {
       <Carousel ref={carouselRef}>
         {platforms.map((platform) => (
           <li key={platform.title}>
-            <PlatformCard {...platform} />
+            <MediaCard {...platform} />
           </li>
         ))}
       </Carousel>

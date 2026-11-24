@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 
-export const LiveTvGrid = styled('div')(({ theme }) => ({
+export const IntroGrid = styled('div')(({ theme }) => ({
   display: 'grid',
   gridTemplateColumns: '1fr 1.15fr',
   alignItems: 'start',

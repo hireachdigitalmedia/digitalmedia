@@ -36,3 +36,10 @@ export interface Faq {
   question: string;
   answer: string;
 }
+
+/** Image card content (image on top, title + description below). */
+export interface MediaItem {
+  title: string;
+  description: string;
+  image: string;
+}

@@ -5,6 +5,7 @@ import {
   HomePage,
   IPTVPage,
   NotFoundPage,
+  OTTPage,
   ServicesPage,
 } from '../app/pages';
 import { MainLayout } from '../layouts';
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     children: [
       { path: ROUTES.home, element: <HomePage /> },
       { path: ROUTES.iptv, element: <IPTVPage /> },
+      { path: ROUTES.ott, element: <OTTPage /> },
       { path: ROUTES.about, element: <AboutPage /> },
       { path: ROUTES.services, element: <ServicesPage /> },
       { path: ROUTES.contact, element: <ContactPage /> },

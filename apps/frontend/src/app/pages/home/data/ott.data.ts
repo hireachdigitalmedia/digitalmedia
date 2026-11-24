@@ -5,18 +5,14 @@ import sportsImage from '../../../../assets/home-image/sports.webp';
 import webSeriesImage from '../../../../assets/home-image/web-series.webp';
 import { ROUTES } from '../../../../router/routes';
 
-export interface Platform {
-  title: string;
-  description: string;
-  image: string;
-}
+import type { MediaItem } from '../../../../data/types';
 
 export const OTT_CONTENT = {
   eyebrow: 'OTT Platforms',
   title: 'Streaming Entertainment Without Limits.',
   subtitle:
     'Discover digital streaming experiences that bring movies, series and entertainment together through OTT platforms.',
-  cta: { label: 'Explore OTT Platforms', to: ROUTES.contact },
+  cta: { label: 'Explore OTT Platforms', to: ROUTES.ott },
   platforms: [
     {
       title: 'Movies',
@@ -43,5 +39,5 @@ export const OTT_CONTENT = {
       description: 'Shows and films the whole household can enjoy',
       image: familyImage,
     },
-  ] satisfies Platform[],
+  ] satisfies MediaItem[],
 };
