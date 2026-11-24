@@ -2,6 +2,7 @@ export const ROUTES = {
   home: '/',
   iptv: '/iptv-services',
   ott: '/ott-platforms',
+  entertainment: '/entertainment',
   about: '/about',
   services: '/services',
   contact: '/contact',
@@ -19,6 +20,19 @@ export const SECTION_IDS = {
   faq: 'faq',
 } as const;
 
+/** Anchor ids of the category blocks on the Entertainment page. */
+export const CATEGORY_IDS = {
+  movies: 'movies',
+  webSeries: 'web-series',
+  liveTv: 'live-tv',
+  sports: 'sports',
+  regional: 'regional',
+  family: 'family',
+} as const;
+
+/** Link to a category on the Entertainment page. */
+export const categoryLink = (id: string) => `${ROUTES.entertainment}#${id}`;
+
 const homeSection = (id: string) => `${ROUTES.home}#${id}`;
 
 export interface NavItem {
@@ -31,7 +45,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', to: ROUTES.home },
   { label: 'IPTV Services', to: ROUTES.iptv },
   { label: 'OTT Platforms', to: ROUTES.ott },
-  { label: 'Entertainment', to: homeSection(SECTION_IDS.entertainment) },
+  { label: 'Entertainment', to: ROUTES.entertainment },
   { label: 'Distribution Partners', to: homeSection(SECTION_IDS.distribution) },
   { label: 'About Us', to: ROUTES.about },
   { label: 'Contact Us', to: ROUTES.contact },
@@ -52,7 +66,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: 'Home', to: ROUTES.home },
       { label: 'IPTV Services', to: ROUTES.iptv },
       { label: 'OTT Platforms', to: ROUTES.ott },
-      { label: 'Entertainment', to: homeSection(SECTION_IDS.entertainment) },
+      { label: 'Entertainment', to: ROUTES.entertainment },
       { label: 'About Us', to: ROUTES.about },
     ],
   },
@@ -63,7 +77,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: 'OTT', to: ROUTES.ott },
       {
         label: 'Digital Entertainment',
-        to: homeSection(SECTION_IDS.entertainment),
+        to: ROUTES.entertainment,
       },
     ],
   },

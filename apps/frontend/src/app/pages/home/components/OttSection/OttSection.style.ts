@@ -14,22 +14,3 @@ export const HeaderActions = styled('div')(({ theme }) => ({
   alignItems: 'center',
   gap: theme.spacing(1.5),
 }));
-
-export const CARD_WIDTH = 340;
-export const CARD_GAP = 24;
-
-export const Carousel = styled('ul')(({ theme }) => ({
-  listStyle: 'none',
-  margin: 0,
-  padding: theme.spacing(0, 0, 1),
-  display: 'grid',
-  gridAutoFlow: 'column',
-  gridAutoColumns: CARD_WIDTH,
-  gap: CARD_GAP,
-  overflowX: 'auto',
-  scrollSnapType: 'x mandatory',
-  scrollbarWidth: 'none',
-  '&::-webkit-scrollbar': { display: 'none' },
-  '& > li': { scrollSnapAlign: 'start' },
-  [theme.breakpoints.down('sm')]: { gridAutoColumns: '82%' },
-}));

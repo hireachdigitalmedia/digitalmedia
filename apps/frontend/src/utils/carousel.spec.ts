@@ -1,4 +1,4 @@
-import { getCarouselStep } from './home.utils';
+import { getCarouselStep } from './carousel';
 
 describe('getCarouselStep', () => {
   it('scrolls by the viewport minus one card', () => {

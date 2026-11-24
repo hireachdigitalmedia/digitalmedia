@@ -11,6 +11,7 @@ export * from './IconCard';
 export * from './IconTile';
 export * from './IntroCards';
 export * from './MediaCard';
+export * from './MediaCarousel';
 export * from './MediaSplit';
 export * from './PageHero';
 export * from './Section';

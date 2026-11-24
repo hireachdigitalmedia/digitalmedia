@@ -42,4 +42,8 @@ export interface MediaItem {
   title: string;
   description: string;
   image: string;
+  /** Small label above the title, e.g. "Category". */
+  eyebrow?: string;
+  /** Anchor id so other pages can link straight to this card. */
+  id?: string;
 }
