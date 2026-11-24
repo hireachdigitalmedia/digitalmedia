@@ -5,7 +5,7 @@ export const COMPANY_INFO = {
   name: env.appName,
   tagline:
     'Entertainment. Connected. A digital entertainment business within the Hi Reach ecosystem alongside Hi Reach Broadband.',
-  email: 'hello@hireachdigitalmedia.com',
+  email: 'info@hireachdigitalmedia.com',
   // The phone remains hidden until it is ready to be published.
   phone: '',
   office:
