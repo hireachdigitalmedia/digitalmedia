@@ -32,7 +32,6 @@ export function Footer() {
               <FooterLink href={`mailto:${COMPANY_INFO.email}`}>
                 {COMPANY_INFO.email}
               </FooterLink>
-              {COMPANY_INFO.phone && <div>Phone: {COMPANY_INFO.phone}</div>}
               {COMPANY_INFO.office && <div>Office: {COMPANY_INFO.office}</div>}
             </Typography>
           </BrandColumn>
