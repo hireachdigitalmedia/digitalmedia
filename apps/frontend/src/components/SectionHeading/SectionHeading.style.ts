@@ -12,9 +12,7 @@ export const HeadingRoot = styled(Box, {
 }));
 
 export const Eyebrow = styled(Typography)(({ theme }) => ({
-  color: theme.palette.secondary.main,
-  fontWeight: 700,
-  letterSpacing: 1.5,
-  textTransform: 'uppercase',
+  display: 'block',
+  color: theme.palette.tertiary.main,
   marginBottom: theme.spacing(1),
 }));

@@ -17,9 +17,12 @@ export function ServicesPage() {
           subtitle={SERVICES_PAGE_CONTENT.subtitle}
         />
         <Grid container spacing={3}>
-          {SERVICES.map((service) => (
+          {SERVICES.map((service, index) => (
             <Grid key={service.id} size={{ xs: 12, sm: 6, md: 3 }}>
-              <ServiceCard service={service} />
+              <ServiceCard
+                service={service}
+                badge={String(index + 1).padStart(2, '0')}
+              />
             </Grid>
           ))}
         </Grid>

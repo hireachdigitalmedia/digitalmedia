@@ -20,7 +20,7 @@ export function Footer() {
             </FooterLink>
           ))}
         </FooterNav>
-        <Typography variant="body2" align="center" sx={{ opacity: 0.75 }}>
+        <Typography variant="bodyMd" align="center" color="text.secondary">
           © {new Date().getFullYear()} {env.appName}. All rights reserved.
         </Typography>
       </Container>

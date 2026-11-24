@@ -1,12 +1,24 @@
 import { Card } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 
 export const ServiceCardRoot = styled(Card)(({ theme }) => ({
   height: '100%',
-  borderTop: `4px solid ${theme.palette.secondary.main}`,
-  transition: theme.transitions.create(['transform', 'box-shadow']),
+  transition: theme.transitions.create(['border-color', 'transform']),
   '&:hover': {
-    transform: 'translateY(-4px)',
-    boxShadow: theme.shadows[4],
+    borderColor: alpha(theme.palette.primary.main, 0.6),
+    transform: 'translateY(-2px)',
   },
+}));
+
+export const IconTile = styled('span')(({ theme }) => ({
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 40,
+  height: 40,
+  marginBottom: theme.spacing(2),
+  borderRadius: 12,
+  backgroundColor: theme.palette.surface.containerHigh,
+  color: theme.palette.primary.main,
+  ...theme.typography.titleMd,
 }));

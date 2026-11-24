@@ -1,19 +1,22 @@
 import { CardContent, Typography } from '@mui/material';
 import type { Service } from '../../data/services';
-import { ServiceCardRoot } from './ServiceCard.style';
+import { IconTile, ServiceCardRoot } from './ServiceCard.style';
 
 export interface ServiceCardProps {
   service: Service;
+  /** Shown in the icon tile (e.g. "01"); defaults to the service's initial. */
+  badge?: string;
 }
 
-export function ServiceCard({ service }: ServiceCardProps) {
+export function ServiceCard({ service, badge }: ServiceCardProps) {
   return (
-    <ServiceCardRoot variant="outlined">
+    <ServiceCardRoot>
       <CardContent>
-        <Typography variant="h6" component="h3" gutterBottom>
+        <IconTile aria-hidden>{badge ?? service.title.charAt(0)}</IconTile>
+        <Typography variant="titleLg" component="h3" gutterBottom>
           {service.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="bodyMd" color="text.secondary">
           {service.description}
         </Typography>
       </CardContent>

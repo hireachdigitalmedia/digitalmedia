@@ -10,10 +10,14 @@ export function HeroSection() {
     <HeroRoot>
       <Container maxWidth="md">
         <HeroContent spacing={3}>
-          <Typography variant="h2" component="h1">
+          <Typography variant="displayLg" component="h1">
             {title}
           </Typography>
-          <Typography variant="h6" color="text.secondary">
+          <Typography
+            variant="bodyLg"
+            color="text.secondary"
+            sx={{ fontSize: '1.125rem', maxWidth: 560 }}
+          >
             {subtitle}
           </Typography>
           <HeroActions>

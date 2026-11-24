@@ -2,20 +2,23 @@ import { Container, Toolbar } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { NAV_ITEMS, ROUTES } from '../../router/routes';
 import { env } from '../../utils/env';
-import { HeaderBar, LogoImage, LogoLink, Nav, NavButton } from './Header.style';
+import {
+  HeaderBar,
+  LogoLink,
+  LogoMark,
+  LogoText,
+  Nav,
+  NavButton,
+} from './Header.style';
 
 export function Header() {
   return (
-    <HeaderBar position="sticky" color="inherit" elevation={0}>
+    <HeaderBar position="sticky" elevation={0}>
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ gap: 2, flexWrap: 'wrap' }}>
           <LogoLink to={ROUTES.home} aria-label={`${env.appName} home`}>
-            <LogoImage
-              src="/logo.png"
-              alt={env.appName}
-              width={457}
-              height={160}
-            />
+            <LogoMark src="/logo-mark.png" alt="" width={36} height={36} />
+            <LogoText>{env.appName}</LogoText>
           </LogoLink>
           <Nav>
             {NAV_ITEMS.map((item) => (

@@ -21,14 +21,14 @@ export function SectionHeading({
     <HeadingRoot align={align}>
       {eyebrow && <Eyebrow variant="overline">{eyebrow}</Eyebrow>}
       <Typography
-        variant={as === 'h1' ? 'h3' : 'h4'}
+        variant={as === 'h1' ? 'headlineLg' : 'headlineMd'}
         component={as}
         gutterBottom
       >
         {title}
       </Typography>
       {subtitle && (
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="bodyLg" color="text.secondary">
           {subtitle}
         </Typography>
       )}

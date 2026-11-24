@@ -10,7 +10,7 @@ export function NotFoundPage() {
   return (
     <NotFoundRoot>
       <Container maxWidth="sm">
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="displayLg" component="h1" gutterBottom>
           404
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 3 }}>

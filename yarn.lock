@@ -1996,6 +1996,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/inter@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource-variable/inter@npm:5.3.0"
+  checksum: 10c0/46fbe41e8482a718f99634c8254346c6081d615415059be12e177224c903d688199125967825e75d4b8122668fd83f70880e11d4e02d08c20b503c65fe2a96d1
+  languageName: node
+  linkType: hard
+
+"@fontsource-variable/space-grotesk@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource-variable/space-grotesk@npm:5.3.0"
+  checksum: 10c0/5b92b6c2878be04996caf1785bb7b0920e33c097da1d0c3568355a33a63797c809c1f3b14d19711561129cb2273f1c81adadadd8e6af6165b8f70310a0923189
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.2":
   version: 0.19.2
   resolution: "@humanfs/core@npm:0.19.2"
@@ -4058,6 +4072,8 @@ __metadata:
   dependencies:
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.1"
+    "@fontsource-variable/inter": "npm:^5.3.0"
+    "@fontsource-variable/space-grotesk": "npm:^5.3.0"
     "@mui/material": "npm:^9.6.0"
     "@tanstack/react-query": "npm:^5.108.4"
     react-router-dom: "npm:^7.18.6"

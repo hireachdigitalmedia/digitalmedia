@@ -14,7 +14,7 @@ export function WhyChooseUs() {
           {reasons.map((reason) => (
             <Grid key={reason.title} size={{ xs: 12, md: 4 }}>
               <ReasonItem>
-                <Typography variant="h6" component="h3" gutterBottom>
+                <Typography variant="titleLg" component="h3" gutterBottom>
                   {reason.title}
                 </Typography>
                 <Typography color="text.secondary">

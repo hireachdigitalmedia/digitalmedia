@@ -13,9 +13,9 @@ export function ValuesSection() {
         <Grid container spacing={3}>
           {values.map((value) => (
             <Grid key={value.title} size={{ xs: 12, md: 4 }}>
-              <ValueCard variant="outlined">
+              <ValueCard>
                 <CardContent>
-                  <Typography variant="h6" component="h3" gutterBottom>
+                  <Typography variant="titleLg" component="h3" gutterBottom>
                     {value.title}
                   </Typography>
                   <Typography color="text.secondary">
