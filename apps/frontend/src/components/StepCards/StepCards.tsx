@@ -6,12 +6,14 @@ import { StepCard, StepGrid } from './StepCards.style';
 
 export interface StepCardsProps {
   steps: Step[];
+  /** Columns on desktop (defaults to 4). */
+  columns?: number;
 }
 
 /** Numbered step cards (orange number badge, title, description). */
-export function StepCards({ steps }: StepCardsProps) {
+export function StepCards({ steps, columns = 4 }: StepCardsProps) {
   return (
-    <StepGrid>
+    <StepGrid columns={columns}>
       {steps.map((step, index) => (
         <li key={step.title}>
           <StepCard>

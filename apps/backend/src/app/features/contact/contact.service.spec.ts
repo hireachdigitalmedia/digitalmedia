@@ -46,7 +46,25 @@ describe('ContactService', () => {
 
     const mail = send.mock.calls[0][0];
     expect(mail.subject).toBe('OTT enquiry from Ravi');
-    expect(mail.text).toContain('City: Hyderabad');
+    expect(mail.text).toContain('Location: Hyderabad');
     expect(mail.text).not.toContain('undefined');
+  });
+
+  it('includes partner details and the company in the subject', async () => {
+    await service.submit({
+      topic: 'partnership',
+      name: 'Ravi',
+      email: 'ravi@netco.in',
+      company: 'NetCo',
+      businessCategory: 'cable-tv-operator',
+      city: 'Hyderabad',
+      state: 'Telangana',
+      message: 'Hello',
+    });
+
+    const mail = send.mock.calls[0][0];
+    expect(mail.subject).toBe('Partnership enquiry from Ravi (NetCo)');
+    expect(mail.text).toContain('Business category: Cable TV Operator');
+    expect(mail.text).toContain('Location: Hyderabad, Telangana');
   });
 });

@@ -1,7 +1,7 @@
 import { Card } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 
-export const FlowCard = styled(Card)(({ theme }) => ({
+export const FlowCardRoot = styled(Card)(({ theme }) => ({
   padding: theme.spacing(4.5),
   [theme.breakpoints.down('sm')]: { padding: theme.spacing(3) },
 }));

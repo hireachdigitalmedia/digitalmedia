@@ -1,8 +1,5 @@
-import GroupsOutlined from '@mui/icons-material/GroupsOutlined';
-import PlayCircleOutlined from '@mui/icons-material/PlayCircleOutlined';
-import RouterOutlined from '@mui/icons-material/RouterOutlined';
-import { ROUTES } from '../../../../router/routes';
-import type { IconLabel } from '../../../../data/types';
+import { DISTRIBUTION_FLOW } from '../../../../data/distribution';
+import { partnerEnquiryLink } from '../../../../router/routes';
 
 export const DISTRIBUTION_CONTENT = {
   eyebrow: 'B2B2C Distribution Ecosystem',
@@ -16,13 +13,9 @@ export const DISTRIBUTION_CONTENT = {
     'Regional Distributors',
     'Digital Entertainment Partners',
   ],
-  cta: { label: 'Become a Distribution Partner', to: ROUTES.contact },
+  cta: { label: 'Become a Distribution Partner', to: partnerEnquiryLink },
   flowTitle: 'Distribution Flow',
-  flow: [
-    { icon: PlayCircleOutlined, label: 'Hi Reach Digital Media' },
-    { icon: RouterOutlined, label: 'Distribution Partners' },
-    { icon: GroupsOutlined, label: 'End Customers' },
-  ] satisfies IconLabel[],
+  flow: DISTRIBUTION_FLOW,
   benefits: [
     'Entertainment service distribution opportunities',
     'Expanded customer offerings',

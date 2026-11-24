@@ -1,12 +1,12 @@
 import {
   ActionButton,
   CheckList,
+  FlowCard,
   Section,
   SectionHeading,
 } from '../../../../../components';
 import { SECTION_IDS } from '../../../../../router/routes';
 import { DISTRIBUTION_CONTENT } from '../../data';
-import { DistributionFlow } from './DistributionFlow';
 import {
   BenefitsCard,
   Chip,
@@ -40,7 +40,7 @@ export function DistributionSection() {
           <ActionButton action={cta} arrow />
         </div>
         <RightColumn>
-          <DistributionFlow title={flowTitle} steps={flow} />
+          <FlowCard title={flowTitle} steps={flow} />
           <BenefitsCard>
             <CheckList items={benefits} columns={2} />
           </BenefitsCard>

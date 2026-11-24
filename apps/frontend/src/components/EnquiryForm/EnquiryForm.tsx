@@ -1,5 +1,5 @@
-import { Alert, Button, Stack, TextField } from '@mui/material';
-import { useId, useState, type ChangeEvent, type FormEvent } from 'react';
+import { Alert, Button, Stack } from '@mui/material';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { getErrorMessage, type ContactTopic } from '../../api';
 import { useSubmitContact } from '../../api-hooks';
 import {
@@ -7,7 +7,8 @@ import {
   toEnquiryPayload,
   type EnquiryValues,
 } from './EnquiryForm.utils';
-import { FieldGrid, FieldLabel, FormCard } from './EnquiryForm.style';
+import { FormField } from '../FormField';
+import { FieldGrid, FormCard } from './EnquiryForm.style';
 
 const FIELDS: {
   name: keyof EnquiryValues;
@@ -54,7 +55,6 @@ export interface EnquiryFormProps {
 
 /** Short lead form (name, phone, email, city) that posts to /api/contact with a topic. */
 export function EnquiryForm({ topic, submitLabel }: EnquiryFormProps) {
-  const idPrefix = useId();
   const [values, setValues] = useState<EnquiryValues>(EMPTY_ENQUIRY);
   const submit = useSubmitContact();
 
@@ -84,25 +84,18 @@ export function EnquiryForm({ topic, submitLabel }: EnquiryFormProps) {
           )}
         </Stack>
         <FieldGrid>
-          {FIELDS.map((field) => {
-            const id = `${idPrefix}-${field.name}`;
-            return (
-              <div key={field.name}>
-                <FieldLabel htmlFor={id}>{field.label}</FieldLabel>
-                <TextField
-                  id={id}
-                  fullWidth
-                  size="small"
-                  type={field.type ?? 'text'}
-                  placeholder={field.placeholder}
-                  required={field.required}
-                  autoComplete={field.autoComplete}
-                  value={values[field.name]}
-                  onChange={handleChange(field.name)}
-                />
-              </div>
-            );
-          })}
+          {FIELDS.map((field) => (
+            <FormField
+              key={field.name}
+              label={field.label}
+              type={field.type ?? 'text'}
+              placeholder={field.placeholder}
+              required={field.required}
+              autoComplete={field.autoComplete}
+              value={values[field.name]}
+              onChange={handleChange(field.name)}
+            />
+          ))}
         </FieldGrid>
         <Button
           type="submit"

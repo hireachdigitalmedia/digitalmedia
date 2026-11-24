@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import {
   AboutPage,
   ContactPage,
+  DistributionPartnersPage,
   EntertainmentPage,
   HomePage,
   IPTVPage,
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: ROUTES.iptv, element: <IPTVPage /> },
       { path: ROUTES.ott, element: <OTTPage /> },
       { path: ROUTES.entertainment, element: <EntertainmentPage /> },
+      { path: ROUTES.partners, element: <DistributionPartnersPage /> },
       { path: ROUTES.about, element: <AboutPage /> },
       { path: ROUTES.services, element: <ServicesPage /> },
       { path: ROUTES.contact, element: <ContactPage /> },

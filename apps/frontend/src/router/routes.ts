@@ -3,6 +3,7 @@ export const ROUTES = {
   iptv: '/iptv-services',
   ott: '/ott-platforms',
   entertainment: '/entertainment',
+  partners: '/distribution-partners',
   about: '/about',
   services: '/services',
   contact: '/contact',
@@ -30,6 +31,15 @@ export const CATEGORY_IDS = {
   family: 'family',
 } as const;
 
+/** Anchor ids on the Distribution Partners page. */
+export const PARTNER_SECTION_IDS = {
+  onboarding: 'onboarding-process',
+  enquiry: 'partner-enquiry',
+} as const;
+
+/** Link straight to the distribution partner enquiry form. */
+export const partnerEnquiryLink = `${ROUTES.partners}#${PARTNER_SECTION_IDS.enquiry}`;
+
 /** Link to a category on the Entertainment page. */
 export const categoryLink = (id: string) => `${ROUTES.entertainment}#${id}`;
 
@@ -46,7 +56,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'IPTV Services', to: ROUTES.iptv },
   { label: 'OTT Platforms', to: ROUTES.ott },
   { label: 'Entertainment', to: ROUTES.entertainment },
-  { label: 'Distribution Partners', to: homeSection(SECTION_IDS.distribution) },
+  { label: 'Distribution Partners', to: ROUTES.partners },
   { label: 'About Us', to: ROUTES.about },
   { label: 'Contact Us', to: ROUTES.contact },
   { label: 'Customer Support', to: homeSection(SECTION_IDS.faq) },
@@ -86,9 +96,9 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       {
         label: 'Distribution Partners',
-        to: homeSection(SECTION_IDS.distribution),
+        to: ROUTES.partners,
       },
-      { label: 'Become a Partner', to: ROUTES.contact },
+      { label: 'Become a Partner', to: partnerEnquiryLink },
     ],
   },
   {
